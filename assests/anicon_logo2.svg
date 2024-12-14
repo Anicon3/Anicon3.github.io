@@ -1,0 +1,161 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000"/>
+      <stop offset="50%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </linearGradient>
+    
+    <linearGradient id="fireGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4d00"/>
+      <stop offset="40%" style="stop-color:#ff0000"/>
+      <stop offset="70%" style="stop-color:#ffff00"/>
+      <stop offset="100%" style="stop-color:#ffffff"/>
+    </linearGradient>
+
+    <radialGradient id="energyGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+    </radialGradient>
+    
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="fireGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#ff4400" result="color"/>
+      <feComposite in="color" in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="pinkGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#ff00ff" result="color"/>
+      <feComposite in="color" in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="blueGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#00ffff" result="color"/>
+      <feComposite in="color" in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background with energy pulse -->
+  <rect x="0" y="0" width="400" height="400" fill="#000000"/>
+  <circle cx="200" cy="200" r="180" fill="url(#bgGradient)"/>
+  <circle cx="200" cy="200" r="160" fill="url(#energyGradient)" opacity="0.3"/>
+  
+  <!-- Anime-style energy rings with more complex paths -->
+  <path d="M50,200 Q130,100 200,80 Q270,100 350,200" stroke="#ff00ff" stroke-width="3" fill="none" filter="url(#pinkGlow)"/>
+  <path d="M50,200 Q130,300 200,320 Q270,300 350,200" stroke="#ff00ff" stroke-width="3" fill="none" filter="url(#blueGlow)"/>
+
+
+  <!-- Naruto? -->
+<!-- Some energy rings?? -->
+<path d="M50,200 Q200,50 350,200" stroke="#00ff08" stroke-width="3" fill="none" filter="url(#pinkGlow)" opacity="0.3"/>
+<path d="M50,200 Q200,350 350,200" stroke="#00ffff" stroke-width="3" fill="none" filter="url(#blueGlow)" opacity="0.3"/>
+<!-- looks like eyes though -->
+
+
+  <!-- Additional energy swirls -->
+  <!-- <path d="M160,120 Q200,150 240,120" stroke="#ff00ff" stroke-width="2" fill="none" filter="url(#pinkGlow)"/>
+  <path d="M160,280 Q200,250 240,280" stroke="#00ffff" stroke-width="2" fill="none" filter="url(#blueGlow)"/> -->
+
+  <!-- Dragon Ball Z inspired energy circles with rotation -->
+  <g transform="rotate(30 200 200)">
+    <circle cx="200" cy="200" r="150" stroke="#ff00ff" stroke-width="2" fill="none" opacity="0.3" filter="url(#pinkGlow)"/>
+  </g>
+  <g transform="rotate(-30 200 200)">
+    <circle cx="200" cy="200" r="140" stroke="#00ffff" stroke-width="2" fill="none" opacity="0.3" filter="url(#blueGlow)"/>
+  </g>
+
+  <!-- Katana-inspired slashes -->
+  <path d="M100,100 L300,300" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  <path d="M300,100 L100,300" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+
+  <!-- Main text "ANICON" with enhanced style -->
+  <g transform="translate(200,190) scale(1.2)">
+    <!-- Shadow layer -->
+    <text x="2" y="2" font-family="Impact" font-size="50" fill="#000000" text-anchor="middle" 
+          style="letter-spacing: 5px;">
+      ANICON
+    </text>
+    <!-- Main text with multiple outlines -->
+    <text x="0" y="0" font-family="Impact" font-size="50" fill="#ffffff" text-anchor="middle" 
+          style="letter-spacing: 5px;" filter="url(#neonGlow)"
+          stroke="#00ffff" stroke-width="3">
+      ANICON
+    </text>
+    <text x="0" y="0" font-family="Impact" font-size="50" fill="none" text-anchor="middle" 
+          style="letter-spacing: 5px;" stroke="#ff00ff" stroke-width="1">
+      ANICON
+    </text>
+  </g>
+
+  <!-- Enhanced fiery "3.0" -->
+  <g transform="translate(200,240)">
+    <!-- Multiple flame layers for depth -->
+    <path d="M-50,-30 Q-40,-50 -30,-30 Q-20,-50 -10,-30 Q0,-50 10,-30 Q20,-50 30,-30 Q40,-50 50,-30" 
+          fill="none" stroke="#ff0000" stroke-width="4" filter="url(#fireGlow)" opacity="0.5"/>
+    <path d="M-45,-25 Q-35,-45 -25,-25 Q-15,-45 -5,-25 Q5,-45 15,-25 Q25,-45 35,-25" 
+          fill="none" stroke="#ffff00" stroke-width="3" filter="url(#fireGlow)" opacity="0.7"/>
+    
+    <!-- Main "3.0" text with enhanced effects -->
+    <text x="0" y="0" font-family="Impact" font-size="70" fill="url(#fireGradient)" text-anchor="middle" 
+          filter="url(#fireGlow)" style="font-style: italic; font-weight: bold;">
+      3.0
+    </text>
+  </g>
+
+  <!-- Modernized INQUIVESTA text -->
+  <text x="200" y="330" font-family="Verdana" font-size="10" fill="#ff00ff" text-anchor="middle" filter="url(#neonGlow)"
+        style="letter-spacing: 3px;">
+    INQUIVESTA
+  </text>
+
+  <!-- Enhanced stars with energy trails -->
+  <g fill="#00ffff" filter="url(#blueGlow)">
+    <!-- Top star with energy trail -->
+    <path d="M200,90 C210,95 220,100 200,110" fill="none" stroke="#00ffff" stroke-width="1"/>
+    <polygon points="200,100 205,110 215,110 207,118 210,128 200,122 190,128 193,118 185,110 195,110"/>
+    
+    <!-- Bottom stars with trails -->
+    <path d="M120,270 C130,275 140,280 120,290" fill="none" stroke="#00ffff" stroke-width="1"/>
+    <polygon points="120,280 125,290 135,290 127,298 130,308 120,302 110,308 113,298 105,290 115,290"/>
+    
+    <path d="M280,270 C290,275 300,280 280,290" fill="none" stroke="#00ffff" stroke-width="1"/>
+    <polygon points="280,280 285,290 295,290 287,298 290,308 280,302 270,308 273,298 265,290 275,290"/>
+  </g>
+
+  <!-- Additional energy effects -->
+  <g stroke="#ff00ff" stroke-width="1" opacity="0.5" filter="url(#pinkGlow)">
+    <!-- Enhanced speed lines -->
+    <line x1="40" y1="40" x2="80" y2="80"/>
+    <line x1="320" y1="40" x2="360" y2="80"/>
+    <line x1="40" y1="360" x2="80" y2="320"/>
+    <line x1="320" y1="360" x2="360" y2="320"/>
+  </g>
+
+  <!-- Energy sparks with more detail -->
+  <g stroke="#00ffff" stroke-width="2" filter="url(#blueGlow)">
+    <path d="M170,150 Q180,140 190,160 Q200,140 210,160" fill="none"/>
+    <path d="M230,150 Q240,140 250,160 Q260,140 270,160" fill="none"/>
+  </g>
+</svg>
