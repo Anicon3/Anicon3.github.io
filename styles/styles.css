@@ -1,0 +1,460 @@
+
+/* Previous styles remain the same */
+:root {
+/* Light mode variables */
+--primary-gradient: linear-gradient(135deg, #bc6bff, #2aa6fe);
+--glass-bg: rgba(255, 255, 255, 0.15);
+--glass-border: rgba(255, 255, 255, 0.25);
+--glass-shadow: rgba(0, 0, 0, 0.1);
+--text-primary: #2D3436;
+--text-secondary: #636E72;
+--accent-color: #FF6B6B;
+--secondary-accent: #4ECDC4;
+--background-start: #F8F9FA;
+--background-end: #E9ECEF;
+}
+
+.dark {
+/* Dark mode variables */
+--primary-gradient: linear-gradient(135deg, #6C5CE7, #00A8CC);
+--glass-bg: rgba(18, 18, 18, 0.25);
+--glass-border: rgba(255, 255, 255, 0.1);
+--glass-shadow: rgba(0, 0, 0, 0.3);
+--text-primary: #F8F9FA;
+--text-secondary: #CED4DA;
+--accent-color: #6C5CE7;
+--secondary-accent: #00A8CC;
+--background-start: #1A1B1E;
+--background-end: #141518;
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+font-family: 'Inter', sans-serif;
+background: var(--primary-gradient);
+color: var(--text-primary);
+transition: all 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Space Grotesk', sans-serif;
+font-weight: 600;
+letter-spacing: -0.03em;
+}
+
+.dark body {
+    background: linear-gradient(135deg, #1e1b4b, #06000f);
+}
+/* Theme Toggle Button Animation */
+.theme-toggle {
+position: relative;
+overflow: hidden;
+}
+
+.theme-toggle::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 0;
+height: 0;
+background: var(--accent-color);
+border-radius: 50%;
+transform: translate(-50%, -50%);
+transition: width 0.6s ease, height 0.6s ease;
+}
+
+.theme-toggle:hover::after {
+width: 200%;
+height: 200%;
+}
+.glass {
+background: var(--glass-bg);
+backdrop-filter: blur(12px);
+border: 1px solid var(--glass-border);
+box-shadow: 
+0 8px 32px var(--glass-shadow),
+inset 0 1px 0 var(--glass-border);
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass:hover {
+transform: translateY(-5px);
+box-shadow: 
+0 12px 48px var(--glass-shadow),
+inset 0 1px 0 var(--glass-border);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+/* Enhanced Animations */
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}
+
+.animate-float {
+animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* New styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 0.5s ease 2s forwards;
+}
+
+.loading-animation {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #fff;
+    border-left-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.slideshow-container {
+position: relative;
+perspective: 1000px;
+overflow: hidden;
+background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+.slideshow-container {
+height: 100vh;
+min-height: 600px;
+}
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+.slideshow-container {
+height: 80vh;
+min-height: 400px;
+max-height: 600px;
+}
+}
+
+.slideshow-wrapper {
+position: relative;
+width: 100%;
+height: 100%;
+transform-style: preserve-3d;
+transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.slideshow-item {
+position: absolute;
+transform-origin: center center -1000px;
+transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+overflow: hidden;
+border-radius: 20px;
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Desktop slide sizes */
+@media (min-width: 768px) {
+.slideshow-item {
+width: min(800px, 70vw);
+height: auto;
+max-height: 80vh;
+}
+}
+
+/* Mobile slide sizes */
+@media (max-width: 767px) {
+.slideshow-item {
+width: min(300px, 85vw);
+height: auto;
+max-height: 70vh;
+}
+}
+
+.slideshow-item img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+transition: transform 0.4s ease;
+}
+
+.slideshow-item:hover img {
+transform: scale(1.05);
+}
+
+.slideshow-nav {
+position: absolute;
+bottom: 2rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+gap: 1rem;
+z-index: 10;
+}
+
+.nav-dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.3);
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+background: white;
+transform: scale(1.2);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+position: absolute;
+bottom: 1rem;
+left: 50%;
+transform: translateX(-50%);
+color: white;
+text-align: center;
+opacity: 0.8;
+animation: bounce 2s infinite;
+z-index: 20;
+}
+
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+transform: translateY(0) translateX(-50%);
+}
+40% {
+transform: translateY(-10px) translateX(-50%);
+}
+60% {
+transform: translateY(-5px) translateX(-50%);
+}
+}
+
+/* Only show scroll indicator on desktop */
+@media (max-width: 767px) {
+.scroll-indicator {
+display: none;
+}
+}
+
+/* Smooth scroll behavior for the whole page */
+html {
+scroll-behavior: smooth;
+}
+
+/* Content after slideshow */
+.content-after-slideshow {
+position: relative;
+z-index: 2;
+background: var(--background-start);
+}
+
+.horizontal-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-item {
+    display: inline-block;
+    scroll-snap-align: start;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Card Hover Effects */
+.competition-card {
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.competition-card:hover {
+transform: translateY(-10px) scale(1.02);
+box-shadow: 
+0 20px 40px var(--glass-shadow),
+inset 0 1px 0 var(--glass-border);
+}
+
+.team-card {
+    transition: all 0.3s ease;
+    perspective: 1000px;
+}
+
+.team-card:hover {
+    transform: rotateY(10deg);
+}
+/* Enhanced Team Section Styles */
+.team-container {
+    position: relative;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.team-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.team-card {
+    flex: 0 0 300px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.team-card:hover {
+    transform: translateY(-10px) rotateY(5deg);
+}
+
+.team-bio {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+}
+
+/* Enhanced Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation dots for team carousel */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Scroll Animations */
+.scroll-reveal {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+/* Navigation Menu */
+.nav-link {
+position: relative;
+color: var(--text-primary);
+transition: color 0.3s ease;
+}
+
+.nav-link::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 0;
+height: 2px;
+background: var(--accent-color);
+transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+width: 100%;
+}
+
