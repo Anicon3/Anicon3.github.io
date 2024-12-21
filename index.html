@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,469 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anicon 3.0 | INQUIVESTA</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
-    <!-- <style>
-        /* Previous styles remain the same */
-        :root {
-    /* Light mode variables */
-        --primary-gradient: linear-gradient(135deg, #bc6bff, #2aa6fe);
-        --glass-bg: rgba(255, 255, 255, 0.15);
-        --glass-border: rgba(255, 255, 255, 0.25);
-        --glass-shadow: rgba(0, 0, 0, 0.1);
-        --text-primary: #2D3436;
-        --text-secondary: #636E72;
-        --accent-color: #FF6B6B;
-        --secondary-accent: #4ECDC4;
-        --background-start: #F8F9FA;
-        --background-end: #E9ECEF;
-        }
-
-        .dark {
-    /* Dark mode variables */
-    --primary-gradient: linear-gradient(135deg, #6C5CE7, #00A8CC);
-    --glass-bg: rgba(18, 18, 18, 0.25);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: rgba(0, 0, 0, 0.3);
-    --text-primary: #F8F9FA;
-    --text-secondary: #CED4DA;
-    --accent-color: #6C5CE7;
-    --secondary-accent: #00A8CC;
-    --background-start: #1A1B1E;
-    --background-end: #141518;
-}
-
-        /* Typography */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--primary-gradient);
-    color: var(--text-primary);
-    transition: all 0.4s ease;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-}
-
-        .dark body {
-            background: linear-gradient(135deg, #1e1b4b, #06000f);
-        }
-/* Theme Toggle Button Animation */
-.theme-toggle {
-    position: relative;
-    overflow: hidden;
-}
-
-.theme-toggle::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: var(--accent-color);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-.theme-toggle:hover::after {
-    width: 200%;
-    height: 200%;
-}
-        .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    box-shadow: 
-        0 8px 32px var(--glass-shadow),
-        inset 0 1px 0 var(--glass-border);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 12px 48px var(--glass-shadow),
-        inset 0 1px 0 var(--glass-border);
-}
-
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        .slide-up {
-            animation: slideUp 0.5s ease-out;
-        }
-/* Enhanced Animations */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* New styles */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeOut 0.5s ease 2s forwards;
-        }
-
-        .loading-animation {
-            width: 100px;
-            height: 100px;
-            border: 4px solid #fff;
-            border-left-color: transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        .slideshow-container {
-  position: relative;
-  perspective: 1000px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Desktop styles */
-@media (min-width: 768px) {
-  .slideshow-container {
-    height: 100vh;
-    min-height: 600px;
-  }
-}
-
-/* Mobile styles */
-@media (max-width: 767px) {
-  .slideshow-container {
-    height: 80vh;
-    min-height: 400px;
-    max-height: 600px;
-  }
-}
-
-.slideshow-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slideshow-item {
-  position: absolute;
-  transform-origin: center center -1000px;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Desktop slide sizes */
-@media (min-width: 768px) {
-  .slideshow-item {
-    width: min(800px, 70vw);
-    height: auto;
-    max-height: 80vh;
-  }
-}
-
-/* Mobile slide sizes */
-@media (max-width: 767px) {
-  .slideshow-item {
-    width: min(300px, 85vw);
-    height: auto;
-    max-height: 70vh;
-  }
-}
-
-.slideshow-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.4s ease;
-}
-
-.slideshow-item:hover img {
-  transform: scale(1.05);
-}
-
-.slideshow-nav {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1rem;
-  z-index: 10;
-}
-
-.nav-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.nav-dot.active {
-  background: white;
-  transform: scale(1.2);
-}
-
-/* Scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-align: center;
-  opacity: 0.8;
-  animation: bounce 2s infinite;
-  z-index: 20;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) translateX(-50%);
-  }
-  40% {
-    transform: translateY(-10px) translateX(-50%);
-  }
-  60% {
-    transform: translateY(-5px) translateX(-50%);
-  }
-}
-
-/* Only show scroll indicator on desktop */
-@media (max-width: 767px) {
-  .scroll-indicator {
-    display: none;
-  }
-}
-
-/* Smooth scroll behavior for the whole page */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Content after slideshow */
-.content-after-slideshow {
-  position: relative;
-  z-index: 2;
-  background: var(--background-start);
-}
-
-        .horizontal-scroll {
-            overflow-x: auto;
-            overflow-y: hidden;
-            white-space: nowrap;
-            padding: 20px 0;
-            scroll-snap-type: x mandatory;
-        }
-
-        .scroll-item {
-            display: inline-block;
-            scroll-snap-align: start;
-        }
-
-        @keyframes fadeOut {
-            to { opacity: 0; visibility: hidden; }
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Card Hover Effects */
-.competition-card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.competition-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 
-        0 20px 40px var(--glass-shadow),
-        inset 0 1px 0 var(--glass-border);
-}
-
-        .team-card {
-            transition: all 0.3s ease;
-            perspective: 1000px;
-        }
-
-        .team-card:hover {
-            transform: rotateY(10deg);
-        }
-        /* Enhanced Team Section Styles */
-        .team-container {
-            position: relative;
-            padding: 2rem 0;
-            overflow: hidden;
-        }
-
-        .team-carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        .team-card {
-            flex: 0 0 300px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            transform-style: preserve-3d;
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px) rotateY(5deg);
-        }
-
-        .team-bio {
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 1.5;
-        }
-
-        /* Enhanced Form Styles */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Navigation dots for team carousel */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .carousel-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        /* Scroll Animations */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Navigation Menu */
-.nav-link {
-    position: relative;
-    color: var(--text-primary);
-    transition: color 0.3s ease;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-    </style> -->
 </head>
 <body class="text-white">
         <!-- Loading Screen -->
@@ -553,43 +92,43 @@ html {
     <div class="container mx-auto">
         <h2 class="text-4xl font-bold mb-8 text-center">Register for Anicon 3.0</h2>
         <div class="glass p-8 rounded-xl max-w-2xl mx-auto">
-            <form id="registrationForm" class="space-y-6">
+            <form onchange="csoa()" method="POST" id="registrationForm" class="space-y-6" action=""><!--replace the url with your apps script url for registraion form this same url has to be replaced in registraion_form.js file in scripts folder also.-->
                 <div class="form-group">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" class="form-input" required name="entry.1234567890">
+                    <label class="form-label" for="form-input-0">Full Name</label>
+                    <input type="text" id="form-input-0" class="form-input" name="fullname" placeholder="Full Name" minlength="2" required oninvalid="this.setCustomValidity('Enter valid name')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" class="form-input" required name="entry.0987654321">
+                    <label class="form-label" for="form-input-1">Email Address</label>
+                    <input type="email" id="form-input-1" class="form-input" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Enter valid Email address')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Phone Number</label>
-                    <input type="tel" class="form-input" required name="entry.1122334455">
+                    <label class="form-label" for="form-input-2">Phone Number</label>
+                    <input type="tel" id="form-input-2" class="form-input" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required  oninvalid="this.setCustomValidity('Enter valid phone number')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">College/Institution</label>
-                    <input type="text" class="form-input" required name="entry.5544332211">
+                    <label class="form-label" for="form-input-3">College/Institution</label>
+                    <input type="text" id="form-input-3" class="form-input" name="institute" placeholder="College/Institution" minlength="2" required  oninvalid="this.setCustomValidity('Enter valid college or institution name')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Preferred Events</label>
+                    <label class="form-label">Preferred Events<small><small>  (Select one or more among the three)</small></small> </label>
                     <div class="space-y-2">
                         <label class="flex items-center">
-                            <input type="checkbox" class="mr-2" name="entry.6677889900" value="Cosplay Competition">
+                            <input oninput="check_require()" type="checkbox" class="mr-2" name="cc" value="Cosplay Competition" required>
                             Cosplay Competition
                         </label>
                         <label class="flex items-center">
-                            <input type="checkbox" class="mr-2" name="entry.6677889900" value="AMV Contest">
+                            <input oninput="check_require()" type="checkbox" class="mr-2" name="awm" value="AMV Contest" required>
                             AMV Contest
                         </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" class="mr-2" name="entry.6677889900" value="Gaming Tournament">
-                            Gaming Tournament
-                        </label>
+                        <!--If you add any other options here go to the registration_form.js in scripts folder and add the input element to some arrays which are also commented there. This is only for the checkbox inputs-->
                     </div>
+                    <input type="text" name="preferred" style="display: none">
                 </div>
-                <button type="submit" class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
-                    Register Now
-                </button>
+                <div class="form-group">
+                    <label class="form-label" for="form-input-3">Transaction Id</label>
+                    <input type="text" id="form-input-3" class="form-input" name="transaction" placeholder="Transaction Id" minlength="2" required  oninvalid="this.setCustomValidity('Enter valid transaction Id')" oninput="this.setCustomValidity('')">
+                </div>
+                <input value="RegisterNow" type="submit" class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
             </form>
         </div>
     </div>
@@ -684,22 +223,20 @@ html {
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
             <div class="glass rounded-xl p-8 max-w-2xl mx-auto">
-                <form class="space-y-6">
+                <form class="space-y-6" name="contactForm" method="POST" action=""><!--replace the url with your apps script url for contact form this same url has to be replaced in contact_form.js file in scripts folder also.-->
                     <div>
-                        <label class="block mb-2">Name</label>
-                        <input type="text" class="w-full p-3 rounded-lg glass" required>
+                        <label for="contact_name" class="block mb-2">Name</label>
+                        <input id="contact_name" name="contact_name" type="text" class="w-full p-3 rounded-lg glass" required>
                     </div>
                     <div>
-                        <label class="block mb-2">Email</label>
-                        <input type="email" class="w-full p-3 rounded-lg glass" required>
+                        <label for="contact_email" class="block mb-2">Email</label>
+                        <input id="contact_email" name="contact_email" type="email" class="w-full p-3 rounded-lg glass" required>
                     </div>
                     <div>
-                        <label class="block mb-2">Message</label>
-                        <textarea class="w-full p-3 rounded-lg glass" rows="4" required></textarea>
+                        <label for="contact_message" class="block mb-2">Message</label>
+                        <textarea id="contact_message" name="contact_message" class="w-full p-3 rounded-lg glass" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity">
-                        Send Message
-                    </button>
+                    <input value="Send Message" type="submit" class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity">
                 </form>
             </div>
         </div>
@@ -710,284 +247,9 @@ html {
             <p>&copy; 2024 Anicon 3.0 | INQUIVESTA IISER-Kolkata</p>
         </div>
 
-    <script>
-        // function toggleTheme() {
-        //     document.documentElement.classList.toggle('dark');
-        // }
 
-        // // Add intersection observer for animations
-        // const observer = new IntersectionObserver((entries) => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             entry.target.style.opacity = '1';
-        //             entry.target.style.transform = 'translateY(0)';
-        //         }
-        //     });
-        // }, { threshold: 0.1 });
-
-        // document.querySelectorAll('.slide-up').forEach(el => {
-        //     el.style.opacity = '0';
-        //     el.style.transform = 'translateY(20px)';
-        //     observer.observe(el);
-        // });
-        function toggleTheme() {
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-}
-
-// Check user's preferred theme on load
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 
-                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-    }
-});
-        // New script additions
-        document.addEventListener('DOMContentLoaded', () => {
-            // Remove loading screen after 2 seconds
-            setTimeout(() => {
-                document.querySelector('.loading-screen').style.display = 'none';
-            }, 2000);
-
-            // Horizontal scroll handling
-            const scrollContainers = document.querySelectorAll('.horizontal-scroll');
-            scrollContainers.forEach(container => {
-                container.addEventListener('wheel', (e) => {
-                    if (e.deltaY !== 0) {
-                        e.preventDefault();
-                        container.scrollLeft += e.deltaY;
-                    }
-                });
-            });
-
-            // Initialize intersection observer for animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('.slide-up, .competition-card, .team-card').forEach(el => {
-                observer.observe(el);
-            });
-        });
-
-                // Team Carousel functionality
-                const carousel = document.querySelector('.team-carousel');
-        const cards = document.querySelectorAll('.team-card');
-        const dotsContainer = document.querySelector('.carousel-dots');
-        let currentIndex = 0;
-
-        // Create dots
-        cards.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('carousel-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
-
-        function goToSlide(index) {
-            currentIndex = index;
-            const offset = index * -(300 + 32); // card width + gap
-            carousel.style.transform = `translateX(${offset}px)`;
-            
-            // Update dots
-            document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        // Auto-advance carousel
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % cards.length;
-            goToSlide(currentIndex);
-        }, 5000);
-
-        // Form submission handling
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            
-            // Replace with your Google Form URL
-            const googleFormUrl = 'YOUR_GOOGLE_FORM_URL';
-            
-            fetch(googleFormUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            })
-            .then(() => {
-                alert('Registration successful! We will contact you shortly.');
-                this.reset();
-            })
-            .catch(error => {
-                alert('There was an error submitting your registration. Please try again.');
-                console.error('Error:', error);
-            });
-        });
-
-        const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.scroll-reveal').forEach(el => {
-    scrollObserver.observe(el);
-});
-
-class Slideshow {
-  constructor() {
-    this.wrapper = document.querySelector('.slideshow-wrapper');
-    this.slides = document.querySelectorAll('.slideshow-item');
-    this.navContainer = document.querySelector('.slideshow-nav');
-    this.currentSlide = 0;
-    this.slideCount = this.slides.length;
-    this.autoScrollInterval = null;
-    this.isTransitioning = false;
-    this.isMobile = window.innerWidth < 768;
-
-    this.init();
-    this.handleResize();
-  }
-
-  init() {
-    // Create navigation dots
-    this.slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.className = 'nav-dot' + (index === 0 ? ' active' : '');
-      dot.addEventListener('click', () => this.goToSlide(index));
-      this.navContainer.appendChild(dot);
-    });
-
-    // Initialize slide positions
-    this.updateSlides();
-    
-    // Start auto-scroll
-    this.startAutoScroll();
-
-    // Add touch support
-    this.addTouchSupport();
-
-    // Add resize handler
-    window.addEventListener('resize', () => this.handleResize());
-
-    // Add scroll handler for desktop
-    if (!this.isMobile) {
-      this.handleScroll();
-    }
-  }
-
-  handleResize() {
-    const wasMobile = this.isMobile;
-    this.isMobile = window.innerWidth < 768;
-    
-    // Adjust layout if switching between mobile and desktop
-    if (wasMobile !== this.isMobile) {
-      this.updateSlides();
-    }
-  }
-
-  handleScroll() {
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    window.addEventListener('scroll', () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 50) {
-        scrollIndicator.style.opacity = '0';
-      } else {
-        scrollIndicator.style.opacity = '0.8';
-      }
-    });
-  }
-
-  updateSlides() {
-    this.slides.forEach((slide, index) => {
-      const offset = index - this.currentSlide;
-      const rotateY = this.isMobile ? offset * 45 : offset * 60; // Less rotation on mobile
-      const translateZ = Math.abs(offset) * (this.isMobile ? -50 : -100); // Less depth on mobile
-      const opacity = 1 - Math.abs(offset) * 0.3;
-      
-      slide.style.transform = `rotateY(${rotateY}deg) translateZ(${translateZ}px)`;
-      slide.style.opacity = opacity;
-      slide.style.zIndex = this.slideCount - Math.abs(offset);
-    });
-
-    // Update navigation dots
-    const dots = this.navContainer.querySelectorAll('.nav-dot');
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === this.currentSlide);
-    });
-  }
-
-  goToSlide(index) {
-    if (this.isTransitioning || index === this.currentSlide) return;
-    
-    this.isTransitioning = true;
-    this.currentSlide = index;
-    this.updateSlides();
-    
-    setTimeout(() => {
-      this.isTransitioning = false;
-    }, 800);
-  }
-
-  nextSlide() {
-    this.goToSlide((this.currentSlide + 1) % this.slideCount);
-  }
-
-  previousSlide() {
-    this.goToSlide((this.currentSlide - 1 + this.slideCount) % this.slideCount);
-  }
-
-  startAutoScroll() {
-    this.autoScrollInterval = setInterval(() => {
-      this.nextSlide();
-    }, 5000);
-  }
-
-  stopAutoScroll() {
-    clearInterval(this.autoScrollInterval);
-  }
-
-  addTouchSupport() {
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    this.wrapper.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].clientX;
-      this.stopAutoScroll();
-    }, false);
-
-    this.wrapper.addEventListener('touchmove', (e) => {
-      touchEndX = e.touches[0].clientX;
-    }, false);
-
-    this.wrapper.addEventListener('touchend', () => {
-      const difference = touchStartX - touchEndX;
-      if (Math.abs(difference) > 50) {
-        if (difference > 0) {
-          this.nextSlide();
-        } else {
-          this.previousSlide();
-        }
-      }
-      this.startAutoScroll();
-    }, false);
-  }
-}
-
-// Initialize slideshow when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  new Slideshow();
-});
-    </script>
 </body>
+<script src="scripts/scripts.js"></script>
+<script src="scripts/registration_form.js" type="text/javascript"></script>
+<script src="scripts/contact_form.js" type="text/javascript"></script>
 </html>
