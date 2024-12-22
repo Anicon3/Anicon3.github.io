@@ -1,0 +1,82 @@
+//you have to open a spreadsheet and go to extension and apps script and then use this code there. otherwise it won't work.
+
+//In the spreadsheet the columns should be in the order of "contact_name contact_email contact_message Date(if you want)" all columns name are case sensitive 
+
+const sheetName = 'contact'//the name of the sheet/////////////////////////////////////////////////////////////////
+const scriptProp = PropertiesService.getScriptProperties()
+
+function intialSetup () {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
+
+function doPost (e) {
+  try {
+    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+    const sheet = doc.getSheetByName(sheetName)
+
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+    const nextRow = sheet.getLastRow() + 1
+
+    const newRow = headers.map(function(header) {
+      return header === 'Date' ? new Date() : e.parameter[header]
+    })
+
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+
+    const notification_address = "thushi3082006@gmail.com"
+    const notification_sub = "Help wanted! Anicon 3.0"
+    const notification_body = "\t\t\t\t\tAnicon 3.0\
+\n\
+IISER Kolkata's Ultimate Anime & Pop Culture Festival\
+\n\
+\n\
+\n\
+\t" + e.parameter['contact_name'] + " has sent a message as follows.\
+\n\
+\n\
+\t" + e.parameter['contact_message'] + "\
+\n\
+\n\
+\tContact Email: " + e.parameter['contact_email'] + ".\
+\n\
+\n\
+\n\
+\t\t© INQUIVESTA | IISER KOLKATA\
+\n\
+\t\t\t\t  2024-2025"
+    const notification_htmlbody = ""
+    const notification_gmail = GmailApp.sendEmail(notification_address, notification_sub, notification_body, {
+      //htmlBody: notification_htmlbody
+    })
+    const respond_address = e.parameter['contact_email']
+    const respond_sub = "Anicon 3.0 support"
+    const respond_body = "\t\t\t\t\tAnicon 3.0\
+\n\
+IISER Kolkata's Ultimate Anime & Pop Culture Festival\
+\n\
+\n\
+\n\
+\tWe have gotten your message. We will respond to it soon.\
+\n\
+\n\
+\n\
+\t\t© INQUIVESTA | IISER KOLKATA\
+\n\
+\t\t\t\t  2024-2025"
+    const respond_htmlbody = ""
+    const respond_gmail = GmailApp.sendEmail(respond_address, respond_sub, respond_body, {
+      //htmlBody: respond_htmlbody
+    })
+
+    return ContentService
+      .createTextOutput(JSON.stringify({'result': 'success', 'error': ''}))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+
+  catch {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+}

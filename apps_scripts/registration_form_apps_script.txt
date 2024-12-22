@@ -1,0 +1,214 @@
+//you have to open a spreadsheet and go to extension and apps script and then use this code there. otherwise it won't work.
+
+//In the spreadsheet the columns should be in the order of "fullname email phone institute preferred transaction confirmation(in this column you have to put confirmed to trigger the email sending) Date(if you want)" all columns name are case sensitive 
+
+const sheetName = 'register'//the name of the sheet/////////////////////////////////////////////////////////////////
+const scriptProp = PropertiesService.getScriptProperties()
+
+function intialSetup () {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
+
+function doPost (e) {
+  const lock = LockService.getScriptLock()
+  lock.tryLock(10000)
+
+  try {
+    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+    const sheet = doc.getSheetByName(sheetName)
+
+
+    const transId = sheet.getRange(1, 6, sheet.getLastRow(), 1).getValues()
+    
+    let cond = true
+    
+    for (let i = 0; i < transId.length; i++) {
+      if (transId[i][0] === e.parameter['transaction']) {
+        cond = false
+      }
+    }
+
+    if (cond) {
+      const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+      const nextRow = sheet.getLastRow() + 1
+
+      const newRow = headers.map(function(header) {
+        return header === 'Date' ? new Date() : e.parameter[header]
+      })
+
+      sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+
+      return ContentService
+        .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+        //.createTextOutput('sadkfaloiwe oiewfnsoijflw')
+        .setMimeType(ContentService.MimeType.JSON)
+    }
+
+    return ContentService
+      .createTextOutput(JSON.stringify({'result': 'error', 'error': 'Transaction Id already exist!\nPlease check the transaction Id.'}))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+
+  catch (e) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+
+  finally {
+    lock.releaseLock()
+  }
+}
+
+function trigger (e) {
+  const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+  const sheet = doc.getSheetByName(sheetName)
+  const range = e.range
+  const data = sheet.getRange(range.rowStart, 1, range.rowEnd - range.rowStart + 1, 7).getValues()
+  for (let i = 0; i < data.length; i++) {
+    if (data[i][6] === "confirmed"){
+      sendEmail(data[i])
+    }
+  }
+}
+
+function sendEmail (data) {
+  let sub = "Anicon 3.0"
+  let body = "\t\t\t\t\tAnicon 3.0\
+\n\
+IISER Kolkata's Ultimate Anime & Pop Culture Festival\
+\n\
+\n\
+\n\
+\tCongrats " + data[0] + "!\
+\n\
+\n\
+\tYou have successfully completed your registration for the " + data[4] + ", with the registration fee paid and all set to showcase your creativity and imagination.\
+\n\
+\n\
+\tWe are so delighted to welcome you to the Anicon 3.0. It is the festival where fans and mads of anime, manga, comics, and many more join together to celebrate the creativity and imagination.\
+\n\
+\n\
+\tLet's make the unforgottable memmories with some events!\
+\n\
+\n\
+\n\
+\t\t© INQUIVESTA | IISER KOLKATA\
+\n\
+\t\t\t\t  2024-2025"
+  let htmlbody = "<div style='max-width: 850px; box-sizing: border-box; margin: 0 auto; padding: 5px; background: linear-gradient(45deg, #2d064c,#8209d8, #0a061f, #8209d8, #2d064c); backdrop-filter: blur(20px); border-radius: 20px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(255, 255, 255, 0.1); flex-wrap: wrap;'>\
+\
+\
+\
+<div style='background-image: url(\"https://t3.ftcdn.net/jpg/07/41/57/50/360_F_741575084_eLPzRBX4siOp3FbEsTOfkFNS0KO897HY.jpg\"); background-repeat: no-repeat; background-size: cover; background-position: center; padding: 20px; border-radius: 15px; text-align: center;'>\
+\
+\
+<h1 style='color: #fda0a0; text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); margin: 0; font-size: 2.5em;'>✨ Anicon 3.0 ✨</h1>\
+\
+<h2 style='color: #ffbebe; text-shadow: 0 4px 8px rgb(0, 0, 0); font-size: 1.2em; margin: 12px 0 0 0;'>IISER Kolkata's Ultimate <span style='font-weight: bold;'>Anime & Pop</span> Culture Festival</h2>\
+\
+\
+</div>\
+\
+\
+\
+</div>\
+\
+\
+\
+\
+\
+\
+<div style='background-image: url(\"https://wallpapers.com/images/featured/anime-iphone-psdmm565oizldbbg.jpg\"); background-repeat: no-repeat; background-size: cover; background-position: bottom; max-width: 800px; background-color: #3c1d4075; background-blend-mode: soft-light; border-radius: 25px; margin: 20px auto; box-shadow: inset 0 2px 15px rgba(255, 255, 255, 0.1); padding: 25px;'>\
+\
+\
+\
+\
+\
+\
+<div style='padding: 12px 15px; border-radius: 15px; background-color: rgba(116, 81, 116, 0.74); box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(255, 255, 255, 0.1); border: 1px solid rgba(229, 255, 0, 0); max-width: 100%; overflow-wrap: break-word;'>\
+\
+\
+\
+\
+\
+<p style='margin-top: 0em; line-height: 1.3rem ; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;Congrats " + data[0] +"!</p>\
+\
+\
+\
+\
+<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;You have successfully completed your registration for the " + data[4] +", with the registraion fee paid and all set to showcase your creativity and imagination.</p>\
+\
+\
+\
+\
+<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;We are so delighted to welcome you to the Anicon 3.0. It is the festival where fans and mads of anime, manga, comics, and many more join together to celebrate the creativity and imagination.</p>\
+\
+\
+\
+\
+<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; margin-bottom: 0px; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;Let's make the unforgottable memories with the events!</p>\
+\
+\
+\
+\
+<!--<div style='display: grid; padding: 10px; padding-left: 15px;color: #ffffff; font-size: 1rem; text-align: left; border-radius: 8px; background-color: #7d8bae7d; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(255, 255, 255, 0.1); border: 1px solid rgba(229, 255, 0, 0); max-width: 100%; overflow-wrap: break-word; min-height: 150px;'>\
+\
+\
+\
+<div style='width: 100%; min-height: 30px; margin-block: 0.2em; margin-left: 0; margin-top: 0em; margin-right: 0; margin-bottom: 0.6em;'>Cosplay Competition\
+\
+<p style='font-size: 0.85em; margin-block: 0.2em; margin: 0.1em 0 0 max(2vw, 1.5em);'>        </p>\
+\
+</div>\
+\
+\
+<div style='width: 100%; min-height: 30px; margin-block: 0.2em; margin-left: 0; margin-top: 0.6em; margin-right: 0; margin-bottom: 0.6em;'>AWM Contest\
+\
+<p style='font-size: 0.85em; margin-block: 0.2em; margin: 0.1em 0 0 max(2vw, 1.5em);'>        </p>\
+\
+</div>\
+\
+\
+<div style='width: 100%; min-height: 30px; margin-block: 0.2em; margin-left: 0; margin-top: 0.6em; margin-right: 0; margin-bottom: 0em;'>Gaming Tournment\
+\
+<p style='font-size: 0.85em; margin-block: 0.2em; margin: 0.1em 0 0 max(2vw, 1.5em);'>       </p>\
+\
+</div>\
+\
+\
+\
+</div>-->\
+\
+\
+\
+\
+\
+</div>\
+\
+\
+\
+\
+\
+</div>\
+\
+\
+\
+\
+\
+\
+<div style='max-width: 850px; box-sizing: border-box; margin: 0 auto; padding: 25px; background-image: url(\"https://static-cdn.jtvnw.net/jtv_user_pictures/20da1935-8c84-4ad2-95bc-8fe6e9af753d-profile_banner-480.png\"); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: #151e3fc2; background-blend-mode: soft-light; backdrop-filter: blur(20px); border-radius: 20px;'>\
+\
+\
+<p style='color: #ffff; text-align: center; text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); margin: 0; font-size: 1rem;'>&copy; INQUIVESTA | IISER KOLKATA<br>2024-2025</p>\
+\
+<!--<p style='color: #ffff; text-shadow: 0 4px 8px rgb(0, 0, 0); font-size: 1rem; margin: 17px 0 0 0;'>Date:        </p>-->\
+\
+\
+</div>"
+
+  const gmailApp = GmailApp.sendEmail(data[1], sub, body, {
+    htmlBody: htmlbody
+  })
+}

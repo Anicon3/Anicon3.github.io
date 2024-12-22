@@ -98,12 +98,15 @@ setInterval(() => {
 }, 5000);
 
 // Form submission handling
-document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
+
+//this event listener is commented because this is for google forms. But we use spreadsheet./////////////////////////////////////////////////
+
+//document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    //e.preventDefault();
+    //const formData = new FormData(this);
     
     // Replace with your Google Form URL
-    const googleFormUrl = 'YOUR_GOOGLE_FORM_URL';
+    /*const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSccxOidaNVLvtcHWpygACCES0PnXTuJ31Z40tOeZI7vyCyzAA/viewform?usp=header';
     
     fetch(googleFormUrl, {
         method: 'POST',
@@ -117,8 +120,25 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     .catch(error => {
         alert('There was an error submitting your registration. Please try again.');
         console.error('Error:', error);
-    });
-});
+    });*//*
+    $.ajax({
+        url: googleFormUrl,
+        data: {"entry.1651719000": document.getElementsByClassName('form-input')[0].value,
+        "entry.981728256": document.getElementsByClassName('form-input')[1].value,
+        "entry.626594595": document.getElementsByClassName('form-input')[2].value,
+        "entry.1435712067": document.getElementsByClassName('form-input')[3].value,
+        "entry.1664994852": "asdf"},
+        type: "POST",
+        dataType: "xml",
+        success: function(d) {},
+        error: function(x, y, z) {
+            $('#success-msg').show()
+            $('#form').show()
+        },
+        mode: "no-cors"
+    });*/
+//});
+
 
 const scrollObserver = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
