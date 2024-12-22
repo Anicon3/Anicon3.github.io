@@ -1,0 +1,109 @@
+.rule {
+	padding: 25px;
+	background-color: #414967;
+	background-image: linear-gradient(135deg, #2d3346, #0e1016f7);
+	box-shadow: 5px 5px 10px #000000ba;
+	border-radius: 17px;
+	width: fit-content;
+	height: fit-content;
+	max-width: 75vw;
+	max-height: 65vh;
+	overflow: auto;
+}
+
+.rule {
+	background: #ffffff26;
+	backdrop-filter: blur(12px);
+	border: 1px solid #ffffff40;
+	box-shadow: 0 8px 32px #0000001a, inset 0 1px 0 #ffffff40;
+}
+
+.rule h2, .how h2 {
+	text-align: center;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*above and below one are determine style of the container of popup*/
+
+.how {
+	padding: 25px;
+	background-color: #414967;
+	background-image: linear-gradient(135deg, #2d3346, #0e1016f7);
+	box-shadow: 5px 5px 10px #000000ba;
+	border-radius: 17px;
+	width: fit-content;
+	height: fit-content;
+	max-width: 75vw;
+	max-height: 65vh;
+	overflow: auto;
+}
+
+.how {
+	background: #ffffff26;
+	backdrop-filter: blur(12px);
+	border: 1px solid #ffffff40;
+	box-shadow: 0 8px 32px #0000001a, inset 0 1px 0 #ffffff40;
+}
+
+.popup button {
+	color: white;
+	position: fixed;
+	right: -20px;
+	top: -20px;
+	width: 20px;
+	height: 20px;
+	margin: 0px;
+	background-color: red;
+	box-shadow: 5px 5px 10px #000000ba;
+	text-align: center;
+	transition: all 0.2s ease-in-out;
+	line-height: 1em;
+	padding: 0 0.8px 1.2px 0;
+	border-radius: 50%;
+}
+
+.popup button:active {
+	transform: scale(0.80);
+}
+
+
+
+
+
+
+/*This one is for the animation.*/
+.popup {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	visibility: hidden;
+	transition: all 0.5s ease-in-out 0s;
+	z-index: 2;
+}
+
+.open_popup {
+	transform: translate(-50%, -50%) scale(1);
+	position: absolute;
+	top: 56.4%;
+	left: 50%;
+	visibility:  visible;
+}
+
+.overlay {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.7);
+	transform: translate(-50%, -50%) scale(0);
+	top: 50%;
+	left: 50%;
+	visibility: hidden;
+	transition: all 0.2s ease-in-out 0s;
+	z-index: 1;
+}
+
+.overlay_popup {
+	visibility: visible;
+	transform: translate(-50%, -50%) scale(1);
+}

@@ -10,7 +10,7 @@ const registration_form = document.forms['registrationForm']
 //And if the user selected on checkbox then to change the other checkbox to be optional.
 function check_require () {
 	//if you added any option, add that input element to this array. Also add some code below. There also a comment.
-	let option_array = [registration_form['cc'], registration_form['awm'];
+	let option_array = [registration_form['cc'], registration_form['awm']]
 	for (let i = 0; i < option_array.length; i++) {
 	  	if (option_array[i].checked) {
 	  		option_array[i].required = true;
