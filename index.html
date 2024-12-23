@@ -30,10 +30,25 @@
             </div>
         </div>
 
-        <div class="popup" id="awm_rule">
+        <div class="popup" id="amv_rule">
             <button onclick="close_popup(this.parentElement)">x</button>
             <div class="rule">
                 <h2>AMV Contest</h2>
+                <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
+                <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+                <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
+                <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+                <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
+                <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+                <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
+                <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+            </div>
+        </div>
+
+        <div class="popup" id="cc_rule">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="rule">
+                <h2>Cosplay Competition</h2>
                 <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
                 <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
                 <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
@@ -54,10 +69,19 @@
             </div>
         </div>
 
-        <div class="popup" id="awm_how">
+        <div class="popup" id="amv_how">
             <button onclick="close_popup(this.parentElement)">x</button>
             <div class="how">
-                <h2>AWM Competition</h2>
+                <h2>AWM Contest</h2>
+                <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
+                <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+            </div>
+        </div>
+
+        <div class="popup" id="cc_how">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="how">
+                <h2>Cosplay Competition</h2>
                 <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
                 <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
             </div>
@@ -154,35 +178,63 @@
                     <input type="text" id="form-input-0" class="form-input" name="fullname" placeholder="Full Name" minlength="2" required oninvalid="this.setCustomValidity('Enter valid name')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="form-input-1">Email Address</label>
-                    <input type="email" id="form-input-1" class="form-input" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Enter valid Email address')" oninput="this.setCustomValidity('')">
+                	<label class="form-label" for="form-input-1">Are you from IISER K?</label>
+                	<select oninput="is_iiserk(this.value)" id="form-input-1" name="is_iiser_k" class="form-input" required>
+                		<option value="no">No</option>
+                		<option value="yes">Yes</option>
+                	</select>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="form-input-2">Phone Number</label>
-                    <input type="tel" id="form-input-2" class="form-input" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required  oninvalid="this.setCustomValidity('Enter valid phone number')" oninput="this.setCustomValidity('')">
+                    <label class="form-label" for="form-input-2">Email Address</label>
+                    <input type="email" onchange="check_iiserk_email(this)" id="form-input-2" class="form-input" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Enter valid Email address')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="form-input-3">College/Institution</label>
-                    <input type="text" id="form-input-3" class="form-input" name="institute" placeholder="College/Institution" minlength="2" required  oninvalid="this.setCustomValidity('Enter valid college or institution name')" oninput="this.setCustomValidity('')">
+                    <label class="form-label" for="form-input-3">Phone Number</label>
+                    <input type="tel" id="form-input-3" class="form-input" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required  oninvalid="this.setCustomValidity('Enter valid phone number')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Preferred Events<small><small>  (Select one or more among the three)</small></small> </label>
+                    <label class="form-label" for="form-input-4">College/Institution</label>
+                    <input type="text" id="form-input-4" class="form-input" name="institute" placeholder="College/Institution" minlength="2" required  oninvalid="this.setCustomValidity('Enter valid college or institution name')" oninput="this.setCustomValidity('')">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Preferred Events<small><small>  (Select one or more among the below)</small></small> </label>
                     <div class="space-y-2">
                         <label class="flex items-center">
-                            <input oninput="check_require()" type="checkbox" class="mr-2" name="cc" value="Cosplay Competition" required>
+                            <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="cc" value="Cosplay Competition" required>
                             Cosplay Competition
                         </label>
                         <label class="flex items-center">
-                            <input oninput="check_require()" type="checkbox" class="mr-2" name="awm" value="AMV Contest" required>
+                            <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="amv" value="AMV Contest" required>
                             AMV Contest
+                        </label>
+                        <label class="flex items-center">
+                            <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="reel" value="Reel Competition" required>
+                            Reel Competition
+                        </label>
+                        <label class="flex items-center">
+                            <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="audi" value="Audience" required>
+                            Want to watch only
                         </label>
                         <!--If you add any other options here go to the registration_form.js in scripts folder and add the input element to some arrays which are also commented there. This is only for the checkbox inputs-->
                     </div>
                     <input type="text" name="preferred" style="display: none">
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="form-input-3">Transaction Id</label>
-                    <input type="text" id="form-input-3" class="form-input" name="transaction" placeholder="Transaction Id" minlength="2" required  oninvalid="this.setCustomValidity('Enter valid transaction Id')" oninput="this.setCustomValidity('')">
+                	<label class="form-label" for="form-input-6">What you want?</label>
+                	<select id="form-input-6" class="form-input" name="wanted_item" oninput="check_price(this)">
+                		<option value="nothing">Nothing</option>
+                		<option value="poster">Poster</option>
+                		<option value="poster + manga panel + anime bookmark">Poster + Manga Panel + Anime Bookmark</option>
+                	</select>
+                </div>
+                <div class="form-group">	
+                	<label id="fee_label">You have to pay 24 rupees.</label>
+                	<input style="display: none;" type="text" name="fee" value="24" required>
+                	<img src="assests/anicon_logo2.svg" id="fee_img">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="form-input-7">Transaction Id</label>
+                    <input type="text" id="form-input-7" class="form-input" name="transaction" placeholder="Transaction Id" minlength="2" required  oninvalid="this.setCustomValidity('Enter valid transaction Id')" oninput="this.setCustomValidity('')">
                 </div>
                 <input value="RegisterNow" type="submit" class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
             </form>
@@ -210,11 +262,20 @@
                     <img src="/api/placeholder/150/150" alt="AMV Competition" class="w-32 h-32 mx-auto mb-4 rounded-full">
                     <h3 class="text-xl font-bold mb-4 text-center">AMV Competition</h3>
                     <div class="flex justify-center space-x-4">
-                        <button onclick="open_popup('awm_rule')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
-                        <button  onclick="open_popup('awm_how')" class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
+                        <button onclick="open_popup('amv_rule')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
+                        <button  onclick="open_popup('amv_how')" class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
                     </div>
                 </div>
                 <!-- Add more competition cards -->
+
+                <div class="competition-card glass rounded-xl p-6 slide-up">
+                    <img src="/api/placeholder/150/150" alt="AMV Competition" class="w-32 h-32 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-bold mb-4 text-center">AMV Competition</h3>
+                    <div class="flex justify-center space-x-4">
+                        <button onclick="open_popup('cc_rule')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
+                        <button  onclick="open_popup('cc_how')" class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
+                    </div>
+                </div>
 
             </div>
         </div>
