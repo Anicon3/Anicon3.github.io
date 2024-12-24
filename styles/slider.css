@@ -1,0 +1,34 @@
+.swiper {
+	padding: 42px;
+	margin: 0px;
+}
+.swiper-wrapper {
+	padding: 20px 0px;
+}
+.swiper-slide {
+}
+.swiper-pagination {
+	--swiper-pagination-bullet-size: 10px;
+}
+.swiper-pagination-bullet {
+	background: black;
+	opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+	background: white;
+	opacity: 1;
+}
+.swiper-button-next, .swiper-button-prev {
+	color: white;
+	font-size: 40px;
+	transition: 0.2s ease;
+}
+.swiper-button-next:hover {
+	font-size: 20px;
+}
+
+@media (max-width: 730px) {
+	.swiper-button {
+		display: none;
+	}
+}
