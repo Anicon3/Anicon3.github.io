@@ -1,0 +1,81 @@
+.nav_bar {
+	margin-right: 0px;
+	width: -webkit-fill-available;
+	padding: 0.2rem 1rem;
+}
+.nav_bar_logo {
+	height: 4rem;
+}
+@media (pointer: fine) {
+	.nav_bar {
+		margin-right: 16px;
+		width: -webkit-fill-available;
+	}
+	::-webkit-scrollbar {
+		width: 16px;
+	}
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #a9abad;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: rgb(169, 171, 173, 0.5);
+	}
+}
+.snap-container {
+	scroll-snap-type: y mandatory;
+	overflow-y: auto;
+	height: 100vh;
+	/*scroll-padding-top: 100px;*/
+}
+.snap-section {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	box-sizing: border-box;
+}
+.snap-section div {
+}
+.snap-section {
+	opacity: 0.1;
+	filter: blur(10px);
+	transform: translateX(0%) scale(0.9);
+	transition: all 0.5s;
+}
+.snap-section.show {
+	opacity: 1;
+	filter: blur(0px);
+	transform: translateX(0%) scale(1);
+}
+.sec-first {
+	margin-top: -60px;
+}
+header {
+	align-items: center;
+    display: flex;
+}
+
+.comp-card-section {
+	display: block;
+	padding-top: calc(100% / 2);
+}
+
+@media (max-height: 630px) {
+	.comp-card-section {
+		padding-top: 70px;
+	}
+}
+
+.comp-card-section h2 {
+	margin-bottom: 0;
+}
+
+.reg {
+}

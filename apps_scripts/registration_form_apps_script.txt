@@ -1,8 +1,8 @@
 //you have to open a spreadsheet and go to extension and apps script and then use this code there. otherwise it won't work.
 
-//In the spreadsheet the columns should be in the order of "fullname email phone institute preferred transaction confirmation(in this column you have to put confirmed to trigger the email sending) Date(if you want)" all columns name are case sensitive 
+//In the spreadsheet the columns should be in the order of "fullname email phone institute preferred is_iiser_k wanted_item fee transaction confirmation(in this column you have to put confirmed to trigger the email sending) Date(if you want)" all columns' name are case sensitive 
 
-const sheetName = 'register'//the name of the sheet/////////////////////////////////////////////////////////////////
+const sheetName = 'register'//the name of the sheet
 const scriptProp = PropertiesService.getScriptProperties()
 
 function intialSetup () {
@@ -19,13 +19,36 @@ function doPost (e) {
     const sheet = doc.getSheetByName(sheetName)
 
 
-    const transId = sheet.getRange(1, 6, sheet.getLastRow(), 1).getValues()
-    
+    const transId = sheet.getRange(1, 9, sheet.getLastRow(), 1).getValues()
     let cond = true
-    
     for (let i = 0; i < transId.length; i++) {
       if (transId[i][0] === e.parameter['transaction']) {
         cond = false
+        return ContentService
+          .createTextOutput(JSON.stringify({'result': 'error', 'error': 'Transaction Id already exist!\nPlease check the transaction Id.'}))
+          .setMimeType(ContentService.MimeType.JSON)
+      }
+    }
+
+    const phone_number = sheet.getRange(1, 3, sheet.getLastRow(), 1).getValues()
+    for (let i = 0; i < phone_number.length; i++) {
+      if (phone_number[i][0] == e.parameter['phone']) {
+        cond = false
+        return ContentService
+          .createTextOutput(JSON.stringify({'result': 'error', 'error': 'Phone number already exist!\nPlease check the phone number.'}))
+          .setMimeType(ContentService.MimeType.JSON)
+      }
+    }
+
+    if (e.parameter['is_iiser_k'] == "yes") {
+      const emailId = sheet.getRange(1, 2, sheet.getLastRow(), 1).getValues()
+      for (let i = 0; i < emailId.length; i++) {
+        if (email[i][0] == e.parameter['email']) {
+          cond = false
+          return ContentService
+            .createTextOutput(JSON.stringify({'result': 'error', 'error': 'IISER K Email Id already exist!\nPlease check the Email Id.'}))
+            .setMimeType(ContentService.MimeType.JSON)
+        }
       }
     }
 
@@ -34,20 +57,26 @@ function doPost (e) {
       const nextRow = sheet.getLastRow() + 1
 
       const newRow = headers.map(function(header) {
-        return header === 'Date' ? new Date() : e.parameter[header]
+        if (header === 'Date') {
+          return new Date()
+        } else {
+          return e.parameter[header]
+        }
+
+        if (header === 'fee' && e.parameter['fee'] == 0 && e.parameter['transaction'] === "") {
+          return String(next_Row)
+        } else {
+          return e.parameter[header]
+        }
       })
 
       sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
       return ContentService
         .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
-        //.createTextOutput('sadkfaloiwe oiewfnsoijflw')
         .setMimeType(ContentService.MimeType.JSON)
     }
 
-    return ContentService
-      .createTextOutput(JSON.stringify({'result': 'error', 'error': 'Transaction Id already exist!\nPlease check the transaction Id.'}))
-      .setMimeType(ContentService.MimeType.JSON)
   }
 
   catch (e) {
@@ -65,15 +94,50 @@ function trigger (e) {
   const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
   const sheet = doc.getSheetByName(sheetName)
   const range = e.range
-  const data = sheet.getRange(range.rowStart, 1, range.rowEnd - range.rowStart + 1, 7).getValues()
-  for (let i = 0; i < data.length; i++) {
-    if (data[i][6] === "confirmed"){
-      sendEmail(data[i])
+  if (range.columnStart <= 10 && range.columnEnd >= 10) {
+    const data = sheet.getRange(range.rowStart, 1, range.rowEnd - range.rowStart + 1, 10).getValues()
+    for (let i = 0; i < data.length; i++) {
+      if (data[i][9] === "confirmed"){
+        sendEmail(data[i])
+      }
     }
   }
 }
 
 function sendEmail (data) {
+  let splited_data = data[4].split(', ')
+  let pre_eve = ""
+  for (let i = 0; i < splited_data.length; i++) {
+    if (splited_data[i] != "" && splited_data != " ") {
+      pre_eve = pre_eve + splited_data[i] + ", "
+    }
+  }
+  pre_eve = pre_eve.slice(0, pre_eve.length - 2)
+
+  let splited_data_1 = data[6].split(' + ')
+  let want_item = ""
+  for (let i = 0; i < splited_data_1.length; i++) {
+    if (splited_data_1[i] != "" && splited_data_1 != " ") {
+      want_item = want_item + splited_data_1[i] + ", "
+    }
+  }
+  want_item = want_item.slice(0, want_item.length - 2)
+
+  let body_part = ""
+  if (data[7] != 0 && data[7] != null) {
+    body_part = "\tYou have paid an amount of rupees " + String(data[7]) + " for the " + want_item + ". Those will be given to you at the right moment.\n\n"
+  }
+
+  let htmlbody_part = ""
+  if (data[7] != 0 && data[7] != null) {
+    htmlbody_part = "<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;You have paid an amount of rupees " + String(data[7]) + " for the " + want_item + ". Those will be given to you at the right moment.</p>"
+  }
+
+  let audi_check = "You have successfully completed your registration for the " + pre_eve +" and all set to showcase your creativity and imagination."
+  if (pre_eve == "Audience") {
+    audi_check = "You have successfully completed your registration as a spectator."
+  }
+
   let sub = "Anicon 3.0"
   let body = "\t\t\t\t\tAnicon 3.0\
 \n\
@@ -84,9 +148,10 @@ IISER Kolkata's Ultimate Anime & Pop Culture Festival\
 \tCongrats " + data[0] + "!\
 \n\
 \n\
-\tYou have successfully completed your registration for the " + data[4] + ", with the registration fee paid and all set to showcase your creativity and imagination.\
+\t" + audi_check + "\
 \n\
 \n\
+" + body_part + "\
 \tWe are so delighted to welcome you to the Anicon 3.0. It is the festival where fans and mads of anime, manga, comics, and many more join together to celebrate the creativity and imagination.\
 \n\
 \n\
@@ -138,7 +203,12 @@ IISER Kolkata's Ultimate Anime & Pop Culture Festival\
 \
 \
 \
-<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;You have successfully completed your registration for the " + data[4] +", with the registraion fee paid and all set to showcase your creativity and imagination.</p>\
+<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;" + audi_check + "</p>\
+\
+\
+\
+\
+" + htmlbody_part + "\
 \
 \
 \
