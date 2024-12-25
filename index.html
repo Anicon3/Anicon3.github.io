@@ -13,8 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Imported the fonts for heading and custom CSS files here -->
   <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
-  <link href="styles/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link href="styles/styles.css" rel="stylesheet">
   <link href="styles/popup.css" rel="stylesheet">
   <link href="styles/slider.css" rel="stylesheet">
   <link href="styles/snap.css" rel="stylesheet">
@@ -42,9 +42,10 @@
 <section>
   <header class="sec-first p-5 px-4"> <!--Adding the type writer effect here, in the H1 tag ↓ -->
     <div class="container mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in" id="autotype"></h1>
-      <!-- its required that the element is left black -->
+      <h1 class="text-4xl md:text-6x1 font-bold mb-4 fade-in">Anicon 3.0</h1>
       <p class="text-xl md:text-2xl opacity-90 slide-up">IISER-Kolkata's Ultimate Anime & Pop Culture Festival</p>
+      <h2 class="text-2xl md:text-3xl font-bold mt-4 fade-in" id="autotype"></h2>
+      <!-- its required that the element is left black -->
     </div>
   </header>
 </section>
@@ -55,29 +56,29 @@
   <section class="slideshow-container">
     <div class="slideshow-wrapper">
       <div class="slideshow-item">
-        <img src="/api/placeholder/600/800" alt="Slide 1">
+        <img src="https://cdn.pixabay.com/photo/2023/10/06/23/29/ai-generated-8299238_1280.jpg" alt="Slide 1">
       </div>
       <div class="slideshow-item">
         <img src="https://wallpapers.com/images/featured/pokemon-va6139eg5csznzmw.jpg" alt="Slide 2">
       </div>
       <div class="slideshow-item">
-        <img src="/api/placeholder/600/800" alt="Slide 3">
+        <img src="https://wallpapers.com/images/featured/marvel-comic-book-background-0exuprkk5cwj6ail.jpg" alt="Slide 3">
       </div>
       <div class="slideshow-item">
-        <img src="/api/placeholder/600/800" alt="Slide 4">
+        <img src="https://c4.wallpaperflare.com/wallpaper/279/834/461/game-of-thrones-tv-shows-hd-4k-wallpaper-preview.jpg" alt="Slide 4">
       </div>
       <div class="slideshow-item">
-        <img src="/api/placeholder/600/800" alt="Slide 5">
+        <img src="https://img.freepik.com/free-photo/anime-moon-landscape_23-2151645908.jpg" alt="Slide 5">
       </div>
     </div>
     <div class="slideshow-nav"></div>
-    <div class="scroll-indicator">
+    <!--<div class="scroll-indicator">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 5v14M19 12l-7 7-7-7" />
       </svg>
       <div style="font-size: 0.8rem; margin-top: 0.5rem">Scroll to explore</div>
-    </div>
+    </div>-->
   </section>
 
   <!-- What is Anicon? -->
@@ -241,7 +242,7 @@
         <div class="card">
           <div class="content">
             <div class="img">
-              <img src="/assests/sandeepkumarkuanar.png" alt="test image">
+              <img src="https://alhathal.net/wp-content/uploads/2019/07/516-5167304_transparent-background-white-user-icon-png-png-download.png" alt="?">
             </div>
             <div class="details">
               <div class="name">?</div>
@@ -266,8 +267,8 @@
   </section>
   
   <!-- Enhanced Registration Form -->
-  <section class="reg py-16 px-4">
-    <div class="container mx-auto">
+  <section class="reg py-16 px-4" style="height: 100vh; overflow: hidden;"><!--the styles above and below have to be removed to remove overlay-->
+    <div class="container mx-auto" style="filter: blur(20px);">
       <h2 class="text-4xl font-bold mb-8 text-center">Register for Anicon 3.0</h2>
       <div class="glass p-8 rounded-xl max-w-2xl mx-auto">
         <form onchange="csoa()" method="POST" id="registrationForm" class="space-y-6" action="">
@@ -356,6 +357,7 @@
         </form>
       </div>
     </div>
+    <div style="position: absolute; width: 100%; height: 100%; background: #3e3e3ed6; padding-top: 45vh; color: #ffff; text-align: center; font-size: 4vw;">Registration will open soon!</div><!--This div has to be deleted to remove over lay-->
   </section>
 
   <!-- <section class="py-16 max-w-3xl px-4">
@@ -385,7 +387,7 @@
       <div class="glass rounded-xl p-8 text-center">
         <h3 class="text-2xl font-bold mb-4">Coming Soon!</h3>
         <p class="text-lg leading-relaxed">
-          The complete schedule for February 7th, 2025 will be revealed shortly.
+          The complete schedule for February 8th, 2025 will be revealed shortly.
         </p>
       </div>
     </div>
@@ -469,8 +471,8 @@
             </div>
           </div>
           <div class="team-card">
-            <img src="assests/rapanjan.png" alt="Rapanjan" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-            <h3 class="text-xl font-bold mb-2 text-center">Rapanjan</h3>
+            <img src="assests/debanjan.png" alt="Debanjan" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+            <h3 class="text-xl font-bold mb-2 text-center">Debanjan</h3>
             <p class="text-sm font-medium text-center text-purple-200 mb-4">Management</p>
             <p class="team-bio text-sm text-gray-100">
               Leading the vision for Anicon 3.0 with 2+ years of experience in event management and a deep passion for
@@ -526,18 +528,18 @@
   </section>
 
   <section class="logo-footer">
-    <div class="sec-first flex flex-col">
-      <div class="flex flex-row justify-evenly mb-4">
+    <div class="sec-first">
+      <div class="flex flex-row justify-evenly mb-4 space-x-4">
         <img src="assests/Anicon3.0.png" alt="our logo">
         <h1></h1>
         <img src="assests/iiserk.svg" alt="IISER-Kolkata logo">
       </div>
-      <div class="glass py-8 px-4 rounded-br-3xl rounded-tl-3xl rounded-tr-lg rounded-bl-lg">
-        <div class="container mx-auto text-center flex flex-col md:flex-row md:justify-center md:space-x-4">
-          <p class="mb-6 md:mb-0">&copy; ANICON 3.0 | INQUIVESTA</p><p>IISER-KOLKATA | 2024-2025</p>
-        </div>
-      </div>
     </div>
+      <footer class="glass py-8 px-4 rounded-br-3xl rounded-tl-3xl rounded-tr-lg rounded-bl-lg">
+        <div class="container mx-auto text-center flex flex-col md:flex-row md:justify-center text-sm md:text-xl">
+          <p class="mb-0 md:mb-0">&copy; ANICON 3.0 | INQUIVESTA | IISER-KOLKATA | 2024-2025</p>
+        </div>
+      </footer>
   </section>
 </div>
   <div class="overlay">
@@ -546,14 +548,14 @@
       <button onclick="close_popup(this.parentElement)">x</button>
       <div class="rule">
         <h2>Reel Competition</h2>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+        <p>Theme: Cosplay preparation for Anicon</p>
+        <p>&esmp;You have to use "Meet me at Anicon 3.0" and Anicon logo with account mention.</p>
+        <p>Tags: #anicon3.0 #inquivesta #iiserk</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
     </div>
 
@@ -561,14 +563,14 @@
       <button onclick="close_popup(this.parentElement)">x</button>
       <div class="rule">
         <h2>AMV Contest</h2>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
     </div>
 
@@ -576,14 +578,14 @@
       <button onclick="close_popup(this.parentElement)">x</button>
       <div class="rule">
         <h2>Cosplay Competition</h2>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
     </div>
 
@@ -591,8 +593,8 @@
       <button onclick="close_popup(this.parentElement)">x</button>
       <div class="how">
         <h2>Reel Competition</h2>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+        <p></p>
+        <p></p>
       </div>
     </div>
 
@@ -600,8 +602,8 @@
       <button onclick="close_popup(this.parentElement)">x</button>
       <div class="how">
         <h2>AWM Contest</h2>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+        <p></p>
+        <p></p>
       </div>
     </div>
 
@@ -609,8 +611,8 @@
       <button onclick="close_popup(this.parentElement)">x</button>
       <div class="how">
         <h2>Cosplay Competition</h2>
-        <p>Rule 1: alasdjflsadjflkajfslasasdfj</p>
-        <p>Rule 2: asdfasdfshafkshfkahkhasdlkhas</p>
+        <p></p>
+        <p></p>
       </div>
     </div>
 

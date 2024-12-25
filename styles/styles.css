@@ -608,9 +608,10 @@ html {
   }
 }
 
-.logo-footer{
+.logo-footer .sec-first{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
@@ -623,4 +624,10 @@ html {
   &:nth-child(1){
     height: 150px;
   }
+}
+
+footer {
+  position: absolute;
+  bottom: 1vh;
+  margin: 0 1vw;
 }

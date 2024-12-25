@@ -64,7 +64,8 @@ header {
 
 .comp-card-section {
 	display: block;
-	padding-top: calc(100% / 2);
+	padding-top: 100px;
+	padding-bottom: 0;
 }
 
 @media (max-height: 630px) {
