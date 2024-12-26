@@ -18,6 +18,7 @@
   <link href="styles/popup.css" rel="stylesheet">
   <link href="styles/slider.css" rel="stylesheet">
   <link href="styles/snap.css" rel="stylesheet">
+  <link href="styles/menu.css" rel="stylesheet">
 </head>
 
 <body class="text-white">
@@ -29,17 +30,39 @@
   </div>
   <nav id="nav_bar" class="nav_bar glass fixed w-full z-50 p-4">
     <div class="container mx-auto flex justify-between items-center">
-      <img id="nav_bar_logo" src="assests/Anicon3.0.png" alt="Anicon 3.0 Logo" class="nav_bar_logo h-20">
-      <button onclick="toggleTheme()" class="p-2 glass rounded-full">
+      <div class="nav_bar_logo_div">
+        <img src="assests/Anicon3.0.png" alt="Anicon 3.0 Logo" class="nav_bar_logo h-20">
+      </div>
+      <div class="nav-buttons">
+      <button onclick="toggleTheme()" class="p-2 glass rounded-full mx-4">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
         </svg>
       </button>
+      <div class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      </div>
     </div>
   </nav>
 
+  <div class="menu-screen menu-offscreen flex flex-col items-center md:grid md:grid-cols-5 md:justify-items-center lg:flex lg:flex-row lg:justify-center lg:pb-2.5 text-xl md:text-xl">
+    <a class="slide-up border-b border-dashed md:border-r lg:border-b-0 px-4 py-0.5" href="#welcome">Welcome</a>
+    <a class="slide-up border-b border-dashed md:border-r lg:border-b-0 lg:px-4 px-4 py-0.5" href="#what">What</a>
+    <a class="slide-up border-b border-dashed md:border-r lg:border-b-0 px-4 py-0.5" href="#philosophy">Philosophy</a>
+    <a class="slide-up border-b border-dashed md:border-r lg:border-b-0 px-4 py-0.5" href="#competitions">Competitions</a>
+    <a class="slide-up border-b border-dashed lg:border-r lg:border-b-0 px-4 py-0.5" href="#judges">Judges</a>
+    <a class="slide-up border-b border-dashed md:border-r md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#price-details">Price Details</a>
+    <a class="slide-up border-b border-dashed md:border-r md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#registration">Registration</a>
+    <a class="slide-up border-b border-dashed md:border-r md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#schedule">Schedule</a>
+    <a class="slide-up border-b border-dashed md:border-r md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#team-section">Our Team</a>
+    <a class="slide-up border-0 px-4 py-0.5" href="#contact">Contact Us</a>
+  </div>
+
 <div class="snap-container">
-<section>
+<section id="welcome">
   <header class="sec-first p-5 px-4"> <!--Adding the type writer effect here, in the H1 tag ↓ -->
     <div class="container mx-auto text-center">
       <h1 class="text-4xl md:text-6x1 font-bold mb-4 fade-in">Anicon 3.0</h1>
@@ -95,7 +118,7 @@
     </div>
   </section> -->
 
-  <section class="flex items-center justify-center min-h-screen px-4">
+  <section id="what" class="flex items-center justify-center min-h-screen px-4">
     <div class="sec-first text-center max-w-3xl">
       <h2 class="text-4xl font-bold mb-12 slide-up">What is Anicon?</h2>
       <div class="glass p-8 rounded-xl slide-up">
@@ -121,7 +144,7 @@
       </div>
     </div>
   </section> -->
-  <section class="flex items-center justify-center min-h-screen px-4">
+  <section id="philosophy" class="flex items-center justify-center min-h-screen px-4">
     <div class="sec-first text-center max-w-3xl">
       <h2 class="text-4xl font-bold mb-12 slide-up">Our Philosophy</h2>
       <div class="glass p-8 rounded-xl slide-up">
@@ -184,7 +207,7 @@
   </section>-->
 
   <!-- Online Competitions -->
-    <section class="comp-card-section">
+    <section id="competitions" class="comp-card-section">
         <div>
             <h2 class="text-4xl font-bold mb-8 text-center slide-up">Online Competitions</h2>
             <div class="swiper">
@@ -234,7 +257,7 @@
         </div>
     </section>
 
-  <section>
+  <section id="judges">
   <div class="cardContainer">
     <h1 class="text-4xl font-bold mb-4 text-center">Judges</h1>
     <div class="main-card">
@@ -266,7 +289,7 @@
   </div>
   </section>
   
-  <section>
+  <section id="price-details">
       <div class="sec-first px-4">
           <h1 class="text-3xl mb-8 text-center">Price Details</h1>
           <table class="md:text-3xl border-separate border border-solid rounded" style="border-spacing: 10px;">
@@ -295,7 +318,7 @@
   </section>
   
   <!-- Enhanced Registration Form -->
-  <section class="reg py-16 px-4" style="height: 100vh; overflow: hidden;"><!--the styles above and below have to be removed to remove overlay-->
+  <section id="registration" class="reg py-16 px-4" style="height: 100vh; overflow: hidden;"><!--the styles above and below have to be removed to remove overlay-->
     <div class="container mx-auto" style="filter: blur(20px);">
       <h2 class="text-4xl font-bold mb-8 text-center">Register for Anicon 3.0</h2>
       <div class="glass p-8 rounded-xl max-w-2xl mx-auto">
@@ -409,7 +432,7 @@
   </section> -->
 
 
-  <section class="flex items-center justify-center min-h-screen px-4">
+  <section id="schedule" class="flex items-center justify-center min-h-screen px-4">
     <div class="sec-first text-center max-w-3xl">
       <h2 class="text-3xl font-bold mb-12 text-center">Event Schedule</h2>
       <div class="glass rounded-xl p-8 text-center">
@@ -422,7 +445,7 @@
   </section>
 
   <!-- Enhanced Team Section -->
-  <section class="py-16 px-4">
+  <section id="team-section" class="py-16 px-4">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-4 text-center">Our Team</h2>
       <div class="team-container">
@@ -529,7 +552,7 @@
     </div>
   </section>
 
-  <section class="py-16 px-4">
+  <section id="contact" class="py-16 px-4">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
       <div class="glass rounded-xl p-8 max-w-2xl mx-auto">
@@ -564,7 +587,7 @@
       </div>
     </div>
       <footer class="glass py-8 px-4 rounded-br-3xl rounded-tl-3xl rounded-tr-lg rounded-bl-lg">
-        <div class="container mx-auto text-center flex flex-col md:flex-row md:justify-center text-sm md:text-xl">
+        <div class="container mx-auto text-center flex flex-col md:flex-row md:justify-center text-xs md:text-xl">
           <p class="mb-0 md:mb-0">&copy; ANICON 3.0 | INQUIVESTA | IISER-KOLKATA | 2024-2025</p>
         </div>
       </footer>
@@ -665,4 +688,5 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="scripts/slider.js" type="text/javascript"></script>
 <script src="scripts/snap.js" type="text/javascript"></script>
+<script src="scripts/menu.js" type="text/javascript"></script>
 </html>

@@ -11,11 +11,14 @@
 	--swiper-pagination-bullet-size: 10px;
 }
 .swiper-pagination-bullet {
-	background: black;
-	opacity: 0.5;
+	background: #ffffff4d;
+	transform: scale(1);
+	transition: 0.5s ease;
+	opacity: 1;
 }
 .swiper-pagination-bullet-active {
 	background: white;
+	transform: scale(1.2);
 	opacity: 1;
 }
 .swiper-button-next, .swiper-button-prev {
