@@ -1,6 +1,5 @@
 var typed = new Typed("#autotype", {
   strings: [
-    "Anicon 3.0",
     "Come!",
     "Join!",
     "Enjoy!",
