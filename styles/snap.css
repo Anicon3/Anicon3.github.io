@@ -1,10 +1,19 @@
 .nav_bar {
 	margin-right: 0px;
 	width: -webkit-fill-available;
-	padding: 0.2rem 1rem;
+	padding: 0.2rem 1rem 0.2rem 1rem;
+	overflow-y: hidden;
+}
+.nav_bar_logo_div {
+	padding-top: 6px;
+	display: flex;
+	align-items: center;
+	height: 4rem;
+	width: fit-content;
+	/*overflow: hidden;*/
 }
 .nav_bar_logo {
-	height: 4rem;
+	height: 5rem;
 }
 @media (pointer: fine) {
 	.nav_bar {
@@ -62,19 +71,19 @@ header {
     display: flex;
 }
 
-.comp-card-section {
+.comp-card-section, .judges-section {
 	display: block;
 	padding-top: 100px;
 	padding-bottom: 0;
 }
 
 @media (max-height: 630px) {
-	.comp-card-section {
+	.comp-card-section, .judges-section {
 		padding-top: 70px;
 	}
 }
 
-.comp-card-section h2 {
+.comp-card-section h2, .judges-section h2 {
 	margin-bottom: 0;
 }
 

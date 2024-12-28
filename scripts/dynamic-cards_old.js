@@ -1,37 +1,35 @@
 window.onload = function() {
   // Get the container where the cards will be added
-  const cardContainer = document.getElementById('judges-cards');
+  const cardContainer = document.querySelector('.main-card .cards');
+
   // Function to create and add a card with detailed attributes
   function addCard(name, job, imageUrl, instagramLink, githubLink, twitterLink) {
     // Create the outer card div
     const card = document.createElement('div');
-    card.classList.add('judge-card'); // Add the 'card' class to the div
-    card.classList.add('swiper-slide'); // Add the 'competition-card' class to the div
-    card.classList.add('glass'); // Add the 'swiper-slide' class to the div
+    card.classList.add('card'); // Add the 'card' class to the div
 
     // Create the content div inside the card
     const content = document.createElement('div');
-    content.classList.add('judge-card-content');
+    content.classList.add('content');
 
     // Create and append the image section
     const imgDiv = document.createElement('div');
-    imgDiv.classList.add('judge-img-div');
+    imgDiv.classList.add('img');
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl; // Set the image URL dynamically
     imgElement.alt = "Profile Image"; // Alt text for the image
-    imgElement.classList.add('judge-img');
     imgDiv.appendChild(imgElement);
 
     // Create and append the details section
     const detailsDiv = document.createElement('div');
-    detailsDiv.classList.add('judge-details');
+    detailsDiv.classList.add('details');
 
     const nameDiv = document.createElement('div');
-    nameDiv.classList.add('judge-name');
+    nameDiv.classList.add('name');
     nameDiv.textContent = name;
 
     const jobDiv = document.createElement('div');
-    jobDiv.classList.add('judge-job');
+    jobDiv.classList.add('job');
     jobDiv.textContent = job;
 
     detailsDiv.appendChild(nameDiv);
@@ -39,7 +37,7 @@ window.onload = function() {
 
     // Create and append the social media icons
     const mediaIconsDiv = document.createElement('div');
-    mediaIconsDiv.classList.add('judge-media-icons');
+    mediaIconsDiv.classList.add('media-icons');
 
     const instagramLinkElement = document.createElement('a');
     instagramLinkElement.href = instagramLink;
@@ -78,10 +76,10 @@ window.onload = function() {
 
 
 // Path to the .txt file (relative or absolute URL)
-const filePath = "http://192.168.57.121/Anicon3.github.io/controls/dynamicCards.txt"; // Replace with the actual path to your .txt file
+const filePath = "./controls/dynamicCards.txt"; // Replace with the actual path to your .txt file
 
 // Fetch the .txt file and display its content
-fetch(filePath, {mode: 'cors', method: 'GET'}) // Fetch the file from the given path
+fetch(filePath) // Fetch the file from the given path
   .then((response) => {
     if (!response.ok) {
       throw new Error(`Error fetching file: ${response.statusText}`);
@@ -140,5 +138,3 @@ function createSocialMediaLink(href, svg) {
   linkElement.appendChild(svgElement);
   return linkElement;
 }
-
-addJudges();
