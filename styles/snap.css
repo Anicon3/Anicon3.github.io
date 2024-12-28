@@ -71,19 +71,19 @@ header {
     display: flex;
 }
 
-.comp-card-section {
+.comp-card-section, .judges-section {
 	display: block;
 	padding-top: 100px;
 	padding-bottom: 0;
 }
 
 @media (max-height: 630px) {
-	.comp-card-section {
+	.comp-card-section, .judges-section {
 		padding-top: 70px;
 	}
 }
 
-.comp-card-section h2 {
+.comp-card-section h2, .judges-section h2 {
 	margin-bottom: 0;
 }
 

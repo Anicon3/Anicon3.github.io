@@ -1,0 +1,63 @@
+
+.swiper-judges {
+  padding: 42px 42px 42px 42px;
+  margin: 0px;
+}
+
+.judge-card {
+  display: block;
+  height: fit-content;
+  width: 100%;
+  border: gray 1px solid;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 20%);
+}
+.judge-card-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.judge-img-div {
+  height: 200px;
+  width: 200px;
+}
+
+.judge-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.judge-details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.judge-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.judge-job {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.judge-media-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.judge-media-icons a svg, .judge-media-icons a img {
+  height: 35px;
+  width: 35px;
+}
