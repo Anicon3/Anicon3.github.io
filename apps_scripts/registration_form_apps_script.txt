@@ -91,6 +91,8 @@ function doPost (e) {
 }
 
 function trigger (e) {
+  const sheetName = 'register'//the name of the sheet
+  const scriptProp = PropertiesService.getScriptProperties()
   const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
   const sheet = doc.getSheetByName(sheetName)
   const range = e.range
@@ -262,6 +264,16 @@ IISER Kolkata's Ultimate Anime & Pop Culture Festival\
 \
 \
 </div>\
+\
+\
+\
+\
+\
+\
+<div style='display: block; text-align: center; background-image: url(\"https://static.vecteezy.com/system/resources/thumbnails/030/663/716/small/calming-anime-background-high-quality-free-photo.jpg\"); background-repeat: no-repeat; background-size: cover; background-position: left top; background-blend-mode: soft-light; max-width: 850px; box-sizing: border-box; margin: 20px auto; padding: 25px; background-color: #263860a8; border-radius: 20px;'>\
+<img style='width: 180px; height: 180px;' src=\"https://api.qrserver.com/v1/create-qr-code/?data=" + data[8] + "&size=180x180&qzone=1&format=png\"/>\
+</div>\
+\
 \
 \
 \

@@ -380,7 +380,7 @@
     <div class="container mx-auto" style="filter: blur(20px);">
       <h2 class="text-4xl font-bold mb-8 text-center">Register for Anicon 3.0</h2>
       <div class="glass p-8 rounded-xl max-w-2xl mx-auto">
-        <form onchange="csoa()" method="POST" id="registrationForm" class="space-y-6" action="">
+        <form onchange="csoa()" method="POST" id="registrationForm" class="space-y-6" action="https://script.google.com/macros/s/AKfycbyGpgDr-daqgwNnxVPG7bYcTmRAc1RCJO_nKTaEU8Vp7iLGG0upBiHTmG0zhQsWsOxnEg/exec">
           <!--replace the url with your apps script url for registraion form this same url has to be replaced in registraion_form.js file in scripts folder also.-->
           <div class="form-group">
             <label class="form-label" for="form-input-0">Full Name</label>
@@ -444,9 +444,9 @@
           <div class="form-group"> <!-- added span tags here -->
             <label class="form-label" for="form-input-6">What you want?</label>
             <select id="form-input-6" class="form-input" name="wanted_item" oninput="check_price(this)">
-              <option value="nothing"><span>Nothing</span></option>
-              <option value="poster"><span>Poster</span></option>
-              <option value="poster + manga panel + anime bookmark"><span>Poster + Manga Panel + Anime Bookmark</span>
+              <option value="registration"><span>Nothing</span></option>
+              <option value="registration + poster"><span>Poster</span></option>
+              <option value="registration + poster + manga panel + anime bookmark"><span>Poster + Manga Panel + Anime Bookmark</span>
               </option>
             </select>
           </div>
@@ -614,7 +614,7 @@
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
       <div class="glass rounded-xl p-8 max-w-2xl mx-auto">
-        <form class="space-y-6" name="contactForm" method="POST" action="">
+        <form class="space-y-6" name="contactForm" method="POST" action="https://script.google.com/macros/s/AKfycbzCZOOsb2sCdoAcSuxolpcDv2MT5XfoQtcsOkwqiVjlT2FYjLAM7yn6gt1q1_ljMlA/exec">
           <!--replace the url with your apps script url for contact form this same url has to be replaced in contact_form.js file in scripts folder also.-->
           <div>
             <label for="contact_name" class="block mb-2">Name</label>

@@ -1,4 +1,4 @@
-const registration_scriptURL = ''
+const registration_scriptURL = 'https://script.google.com/macros/s/AKfycbyGpgDr-daqgwNnxVPG7bYcTmRAc1RCJO_nKTaEU8Vp7iLGG0upBiHTmG0zhQsWsOxnEg/exec'
 //replace the url with your appscript url for the registration/////////////////////////////////////////////////////////
 
 
@@ -43,24 +43,24 @@ function check_price (item_ele) {
 	let price = 24;
 	img_src = src_24;
 	if (is_iiser_k === "yes") {
-		if (item === "poster + manga panel + anime bookmark") {
+		if (item === "registration + poster + manga panel + anime bookmark") {
 			price = 49;
 			img_src = src_49;
-		} else if (item === "poster") {
+		} else if (item === "registration + poster") {
 			price = 29;
 			img_src = src_29;
-		} else if (item === "nothing") {
+		} else if (item === "registration") {
 			price = 0;
 			img_src = src_0;
 		}
 	} else {
-		if (item === "poster + manga panel + anime bookmark") {
+		if (item === "registration + poster + manga panel + anime bookmark") {
 			price = 69;
 			img_src = src_69;
-		} else if (item === "poster") {
+		} else if (item === "registration + poster") {
 			price = 49;
 			img_src = src_49;
-		} else if (item === "nothing") {
+		} else if (item === "registration") {
 			price = 24;
 			img_src = src_24;
 		}
@@ -162,7 +162,7 @@ function submit_registration_form () {
 function check_submit (data, success_message) {
 	data = JSON.parse(data);
 	if (data.result === "success") {
-		alert(success_message + data.row);
+		alert(success_message);
 	  	registration_form.reset();
 	} else {
 		//uncomment this if you want to check the duplicate transaction id error and reset the transaction id input value. 

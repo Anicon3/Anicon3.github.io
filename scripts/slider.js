@@ -6,7 +6,7 @@ const swiper = new Swiper('.swiper-competitions', {
   rewind: true,
   autoplay: {
     delay: 2500,
-    disableOnInteraction: false,
+    disableOnInteraction: true,
     PauseOnMouseEnter: true,
   },
   centerInsufficientSlides: true,
@@ -52,7 +52,7 @@ const swiper_judges = new Swiper('.swiper-judges', {
   rewind: true,
   autoplay: {
     delay: 2500,
-    disableOnInteraction: false,
+    disableOnInteraction: true,
     PauseOnMouseEnter: true,
   },
   centerInsufficientSlides: true,

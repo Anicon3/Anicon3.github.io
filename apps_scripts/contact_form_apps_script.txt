@@ -24,7 +24,7 @@ function doPost (e) {
 
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
-    const notification_address = "thushi3082006@gmail.com"
+    const notification_address = "anicon334@gmail.com"
     const notification_sub = "Help wanted! Anicon 3.0"
     const notification_body = "\t\t\t\t\tAnicon 3.0\
 \n\
@@ -45,10 +45,69 @@ IISER Kolkata's Ultimate Anime & Pop Culture Festival\
 \t\t© INQUIVESTA | IISER KOLKATA\
 \n\
 \t\t\t\t  2024-2025"
-    const notification_htmlbody = ""
+    const notification_htmlbody = "<div style='max-width: 850px; box-sizing: border-box; margin: 0 auto; padding: 5px; background: linear-gradient(45deg, #2d064c,#8209d8, #0a061f, #8209d8, #2d064c); backdrop-filter: blur(20px); border-radius: 20px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(255, 255, 255, 0.1); flex-wrap: wrap;'>\
+\
+\
+\
+<div style='background-image: url(\"https://t3.ftcdn.net/jpg/07/41/57/50/360_F_741575084_eLPzRBX4siOp3FbEsTOfkFNS0KO897HY.jpg\"); background-repeat: no-repeat; background-size: cover; background-position: center; padding: 20px; border-radius: 15px; text-align: center;'>\
+\
+\
+<h1 style='color: #fda0a0; text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); margin: 0; font-size: 2.5em;'>✨ Anicon 3.0 ✨</h1>\
+\
+<h2 style='color: #ffbebe; text-shadow: 0 4px 8px rgb(0, 0, 0); font-size: 1.2em; margin: 12px 0 0 0;'>IISER Kolkata's Ultimate <span style='font-weight: bold;'>Anime & Pop</span> Culture Festival</h2>\
+\
+\
+</div>\
+\
+\
+\
+</div>\
+\
+\
+\
+\
+\
+\
+<div style='background-image: url(\"https://wallpapers.com/images/featured/anime-iphone-psdmm565oizldbbg.jpg\"); background-repeat: no-repeat; background-size: cover; background-position: bottom; max-width: 800px; background-color: #3c1d4075; background-blend-mode: soft-light; border-radius: 25px; margin: 20px auto; box-shadow: inset 0 2px 15px rgba(255, 255, 255, 0.1); padding: 25px;'>\
+\
+\
+\
+<div style='padding: 12px 15px; border-radius: 15px; background-color: rgba(116, 81, 116, 0.74); box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(255, 255, 255, 0.1); border: 1px solid rgba(229, 255, 0, 0); max-width: 100%; overflow-wrap: break-word;'>\
+\
+\
+<p style='margin-top: 0em; margin-bottom: 0em; line-height: 1.3rem ; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;" + e.parameter['contact_name'] + " has sent a message as follows.</p>\
+\
+\
+<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;" + e.parameter['contact_message'] + "</p>\
+\
+\
+<p style='line-height: 1.3; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; margin-bottom: 0px; animation: fadeIn 2s;'>Contact Email: " + e.parameter['contact_email'] + ".</p>\
+\
+\
+</div>\
+\
+\
+\
+</div>\
+\
+\
+\
+\
+\
+\
+<div style='max-width: 850px; box-sizing: border-box; margin: 0 auto; padding: 25px; background-image: url(\"https://static-cdn.jtvnw.net/jtv_user_pictures/20da1935-8c84-4ad2-95bc-8fe6e9af753d-profile_banner-480.png\"); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: #151e3fc2; background-blend-mode: soft-light; backdrop-filter: blur(20px); border-radius: 20px;'>\
+\
+\
+<p style='color: #ffff; text-align: center; text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); margin: 0; font-size: 1rem;'>&copy; INQUIVESTA | IISER KOLKATA<br>2024-2025</p>\
+\
+\
+</div>"
     const notification_gmail = GmailApp.sendEmail(notification_address, notification_sub, notification_body, {
       //htmlBody: notification_htmlbody
     })
+
+
+    
     const respond_address = e.parameter['contact_email']
     const respond_sub = "Anicon 3.0 support"
     const respond_body = "\t\t\t\t\tAnicon 3.0\
@@ -64,9 +123,59 @@ IISER Kolkata's Ultimate Anime & Pop Culture Festival\
 \t\t© INQUIVESTA | IISER KOLKATA\
 \n\
 \t\t\t\t  2024-2025"
-    const respond_htmlbody = ""
+    const respond_htmlbody = "<div style='max-width: 850px; box-sizing: border-box; margin: 0 auto; padding: 5px; background: linear-gradient(45deg, #2d064c,#8209d8, #0a061f, #8209d8, #2d064c); backdrop-filter: blur(20px); border-radius: 20px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(255, 255, 255, 0.1); flex-wrap: wrap;'>\
+\
+\
+\
+<div style='background-image: url(\"https://t3.ftcdn.net/jpg/07/41/57/50/360_F_741575084_eLPzRBX4siOp3FbEsTOfkFNS0KO897HY.jpg\"); background-repeat: no-repeat; background-size: cover; background-position: center; padding: 20px; border-radius: 15px; text-align: center;'>\
+\
+\
+<h1 style='color: #fda0a0; text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); margin: 0; font-size: 2.5em;'>✨ Anicon 3.0 ✨</h1>\
+\
+<h2 style='color: #ffbebe; text-shadow: 0 4px 8px rgb(0, 0, 0); font-size: 1.2em; margin: 12px 0 0 0;'>IISER Kolkata's Ultimate <span style='font-weight: bold;'>Anime & Pop</span> Culture Festival</h2>\
+\
+\
+</div>\
+\
+\
+\
+</div>\
+\
+\
+\
+\
+\
+\
+<div style='background-image: url(\"https://wallpapers.com/images/featured/anime-iphone-psdmm565oizldbbg.jpg\"); background-repeat: no-repeat; background-size: cover; background-position: bottom; max-width: 800px; background-color: #3c1d4075; background-blend-mode: soft-light; border-radius: 25px; margin: 20px auto; box-shadow: inset 0 2px 15px rgba(255, 255, 255, 0.1); padding: 25px;'>\
+\
+\
+\
+<div style='padding: 12px 15px; border-radius: 15px; background-color: rgba(116, 81, 116, 0.74); box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(255, 255, 255, 0.1); border: 1px solid rgba(229, 255, 0, 0); max-width: 100%; overflow-wrap: break-word;'>\
+\
+\
+<p style='margin-top: 0em; margin-bottom: 0em; line-height: 1.3rem ; font-size: 1.0rem; color: #fff; text-shadow: 0 1px 2px rgba(29, 255, 55, 0.63); text-align: justify; animation: fadeIn 2s;'>&emsp;&emsp;&ensp;We have gotten your message. We will respond to it soon.</p>\
+\
+\
+</div>\
+\
+\
+\
+</div>\
+\
+\
+\
+\
+\
+\
+<div style='max-width: 850px; box-sizing: border-box; margin: 0 auto; padding: 25px; background-image: url(\"https://static-cdn.jtvnw.net/jtv_user_pictures/20da1935-8c84-4ad2-95bc-8fe6e9af753d-profile_banner-480.png\"); background-repeat: no-repeat; background-size: cover; background-position: top; background-color: #151e3fc2; background-blend-mode: soft-light; backdrop-filter: blur(20px); border-radius: 20px;'>\
+\
+\
+<p style='color: #ffff; text-align: center; text-shadow: 0 6px 12px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3); margin: 0; font-size: 1rem;'>&copy; INQUIVESTA | IISER KOLKATA<br>2024-2025</p>\
+\
+\
+</div>"
     const respond_gmail = GmailApp.sendEmail(respond_address, respond_sub, respond_body, {
-      //htmlBody: respond_htmlbody
+      htmlBody: respond_htmlbody
     })
 
     return ContentService
