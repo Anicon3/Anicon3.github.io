@@ -82,7 +82,7 @@ async function addJudges () {
 
 
 // Path to the .txt file (relative or absolute URL)
-const filePath = "https:anicon3.github.io/controls/dynamicCards.txt"; // Replace with the actual path to your .txt file
+const filePath = "https://anicon3.github.io/controls/dynamicCards.txt"; // Replace with the actual path to your .txt file
 
 // Fetch the .txt file and display its content
 fetch(filePath, {mode: 'cors', method: 'GET'}) // Fetch the file from the given path
