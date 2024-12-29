@@ -1,8 +1,8 @@
 /* Previous styles remain the same */
 :root {
   /* Light mode variables */
-  --primary-gradient: linear-gradient(135deg, #bc6bff, #2aa6fe);
-  --glass-bg: rgba(255, 255, 255, 0.15);
+  --primary-gradient: linear-gradient(135deg, #c02a6ba6, #ffb65fd6);
+  --glass-bg: rgba(237, 255, 169, 0.17);/*#ff4b4b1f;*/
   --glass-border: rgba(255, 255, 255, 0.25);
   --glass-shadow: rgba(0, 0, 0, 0.1);
   --text-primary: #2d3436;
@@ -11,12 +11,13 @@
   --secondary-accent: #4ecdc4;
   --background-start: #f8f9fa;
   --background-end: #e9ecef;
+  --menu-screen-bg: #ff4b4b1f;
 }
 
 .dark {
   /* Dark mode variables */
-  --primary-gradient: linear-gradient(135deg, #6c5ce7, #00a8cc);
-  --glass-bg: rgba(18, 18, 18, 0.25);
+  --primary-gradient: linear-gradient(135deg, #1e1b4b, #06000f);
+  --glass-bg: rgba(31, 25, 78, 0.65);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: rgba(0, 0, 0, 0.3);
   --text-primary: #f8f9fa;
@@ -25,6 +26,7 @@
   --secondary-accent: #00a8cc;
   --background-start: #1a1b1e;
   --background-end: #141518;
+  --menu-screen-bg: #5445c96b;
 }
 
 /* Typography */
@@ -50,7 +52,7 @@ h6 {
 }
 
 .dark body {
-  background: linear-gradient(135deg, #1e1b4b, #06000f);
+  /*background: linear-gradient(135deg, #1e1b4b, #06000f);*/
 }
 
 /* Theme Toggle Button Animation */
@@ -446,13 +448,13 @@ html {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--text-secondary);/*rgba(255, 255, 255, 0.3);*/
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .carousel-dot.active {
-  background: white;
+  background: var(--text-primary);/*white;*/
   transform: scale(1.2);
 }
 

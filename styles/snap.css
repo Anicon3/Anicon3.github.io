@@ -87,5 +87,10 @@ header {
 	margin-bottom: 0;
 }
 
-.reg {
+
+@media(max-height: 446px) {
+	.snap-section {
+		scroll-snap-align: none;
+		scroll-snap-stop: normal;
+	}
 }

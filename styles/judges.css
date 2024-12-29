@@ -34,6 +34,19 @@
   object-fit: cover;
   border-radius: 50%;
 }
+.judge-img {
+  filter: grayscale(100%);
+}
+
+.judge-img:hover {
+  filter: grayscale(0%);
+}
+
+@media(max-width: 768px) {
+  .judge-img {
+    filter: grayscale(0%);
+  }
+}
 
 .judge-details {
   display: flex;
@@ -58,6 +71,7 @@
 }
 
 .judge-media-icons a svg, .judge-media-icons a img {
+  fill: var(--text-primary);
   height: 35px;
   width: 35px;
 }

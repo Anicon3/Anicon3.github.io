@@ -11,18 +11,18 @@
 	--swiper-pagination-bullet-size: 10px;
 }
 .swiper-pagination-bullet {
-	background: #ffffff4d;
+	background: var(--text-secondary);/*#ffffff4d;*/
 	transform: scale(1);
 	transition: 0.5s ease;
 	opacity: 1;
 }
 .swiper-pagination-bullet-active {
-	background: white;
+	background: var(--text-primary);/*white;*/
 	transform: scale(1.2);
 	opacity: 1;
 }
 .swiper-button-next, .swiper-button-prev {
-	color: white;
+	color: var(--text-primary);/*white;*/
 	font-size: 40px;
 	transition: 0.2s ease;
 }
