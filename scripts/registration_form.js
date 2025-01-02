@@ -26,7 +26,7 @@ function check_iiserk_email (email_input) {
 		domain = domain[domain.length - 1];
 		if (domain != "iiserkol.ac.in") {
 			alert("Please enter a valid IISER-K Email.");
-			//email_input.value = "";
+			email_input.value = "";
 		}
 	}
 }
@@ -124,13 +124,20 @@ registration_form.addEventListener('submit', e => {
   
   e.preventDefault()
 
+  check_iiserk_email(registration_form['email']);
+  check_price(registration_form['wanted_item']);
+
   //this part is for an alert message to say "check the transaction id"
   if (submit_or_alert) {
   	submit_or_alert = false;
   	submit_registration_form();
   } else {
   	submit_or_alert = true;
-  	alert("Please double check the transaction Id.");
+  	if (Number(registration_form['fee'].value) != 0) {
+  		alert("Please double check the transaction Id.");
+  	} else if (Number(registration_form['fee'].value) == 0) {
+  		submit_registration_form();
+  	}
   }
   ////////////////////////////////////////////////////////////////////
 })

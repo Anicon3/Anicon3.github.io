@@ -87,11 +87,11 @@
 .menu-screen a {
 	width: fit-content;
 	text-align: center;
-	text-shadow: 4px 5px 5px var(--background-end);/*rgba(0, 0, 0, 0.5);*/
+	text-shadow: 4px 5px 10px var(--background-end);/*rgba(0, 0, 0, 0.5);*/
 	transition: 0.2s ease;
 }
 .menu-screen a:hover {
-	color: var(--text-primary);/*#ffffff91;*/
+	color: var(--text-secondary);/*#ffffff91;*/
 }
 @media (max-width: 1023px) {
 	.menu-screen a {
