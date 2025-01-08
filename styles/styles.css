@@ -520,10 +520,10 @@ html {
 }
 
 .logo-footer img{
-  width: 108px;
-  height: 108px;
+  width: 132px;
+  height: 132px;
   &:nth-child(1){
-    height: 150px;
+    height: 172px;
   }
 }
 
