@@ -2,112 +2,132 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="1q3WZ_l1PaNM9eG4QcOyEzb6fZB2T1DOvxSt73J5uvI" />
-  <title>Anicon 3.0 | INQUIVESTA</title>
-  <!-- holds the favicon -->
-  <link rel="shortcut icon" href="assests/Anicon3.0.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="1q3WZ_l1PaNM9eG4QcOyEzb6fZB2T1DOvxSt73J5uvI" />
+    <title>Anicon 3.0 | INQUIVESTA</title>
+    <!-- holds the favicon -->
+    <link rel="shortcut icon" href="assests/Anicon3.0.png" type="image/x-icon">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Imported the fonts for heading and custom CSS files here -->
-  <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <link href="styles/styles.css" rel="stylesheet">
-  <link href="styles/popup.css" rel="stylesheet">
-  <link href="styles/slider.css" rel="stylesheet">
-  <link href="styles/judges.css" rel="stylesheet">
-  <link href="styles/snap.css" rel="stylesheet">
-  <link href="styles/menu.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Imported the fonts for heading and custom CSS files here -->
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/popup.css" rel="stylesheet">
+    <link href="styles/slider.css" rel="stylesheet">
+    <link href="styles/judges.css" rel="stylesheet">
+    <link href="styles/snap.css" rel="stylesheet">
+    <link href="styles/menu.css" rel="stylesheet">
 </head>
 
 <body class="">
 
 
-  <!-- Loading Screen --> <!--holds the logo for ANICON-->
-  <div class="loading-screen">
-    <div class="loading-animation"></div>
-  </div>
-  <nav id="nav_bar" class="nav_bar glass fixed w-full z-50 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="nav_bar_logo_div">
-        <img src="assests/Anicon3.0.png" alt="Anicon 3.0 Logo" class="nav_bar_logo h-20">
-      </div>
-      <div class="nav-buttons">
-      <button onclick="toggleTheme()" class="p-2 glass rounded-full mx-4">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-        </svg>
-      </button>
-      <div class="menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      </div>
+    <!-- Loading Screen --> <!--holds the logo for ANICON-->
+    <div class="loading-screen">
+        <div class="loading-animation"></div>
     </div>
-  </nav>
+    <nav id="nav_bar" class="nav_bar glass fixed w-full z-50 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="nav_bar_logo_div">
+                <img src="assests/Anicon3.0.png" alt="Anicon 3.0 Logo" class="nav_bar_logo h-20">
+            </div>
+            <div class="nav-buttons">
+                <button onclick="toggleTheme()" class="p-2 glass rounded-full mx-4">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+                <div class="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <div class="menu-screen menu-offscreen flex flex-col items-center md:grid md:grid-cols-5 md:justify-items-center lg:flex lg:flex-row lg:justify-center lg:pb-2.5 text-xl md:text-xl">
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 lg:border-b-0 px-4 py-0.5" href="#welcome">Welcome</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 lg:border-b-0 lg:px-4 px-4 py-0.5" href="#what">What</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 lg:border-b-0 px-4 py-0.5" href="#philosophy">Philosophy</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 lg:border-b-0 px-4 py-0.5" href="#competitions">Competitions</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 lg:border-r-2 lg:border-b-0 px-4 py-0.5" href="#judges">Judges</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#price-details">Price Details</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#registration">Registration</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#schedule">Schedule</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#team-section">Our Team</a>
-    <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-0 px-4 py-0.5" href="#contact">Contact Us</a>
-  </div>
-
-<div class="snap-container">
-<section id="welcome">
-  <header class="sec-first p-5 px-4"> <!--Adding the type writer effect here, in the H1 tag ↓ -->
-    <div class="container mx-auto text-center">
-      <h1 class="text-4xl md:text-6x1 font-bold mb-4 fade-in">Anicon 3.0</h1>
-      <p class="text-xl md:text-2xl opacity-90 slide-up">IISER-Kolkata's Ultimate Anime & Pop Culture Festival</p>
-      <h2 class="text-2xl md:text-6xl font-bold mt-4 fade-in" id="autotype"></h2>
-      <!-- its required that the element is left black -->
+    <div
+        class="menu-screen menu-offscreen flex flex-col items-center md:grid md:grid-cols-5 md:justify-items-center lg:flex lg:flex-row lg:justify-center lg:pb-2.5 text-xl md:text-xl">
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 lg:border-b-0 px-4 py-0.5" href="#welcome">Welcome</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 lg:border-b-0 lg:px-4 px-4 py-0.5" href="#what">What</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 lg:border-b-0 px-4 py-0.5" href="#philosophy">Philosophy</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 lg:border-b-0 px-4 py-0.5" href="#competitions">Competitions</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 lg:border-r-2 lg:border-b-0 px-4 py-0.5" href="#judges">Judges</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5"
+            href="#price-details">Price Details</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5"
+            href="#registration">Registration</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5"
+            href="#schedule">Schedule</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;"
+            class="slide-up border-b-2 md:border-r-2 md:border-b-0 lg:border-b-0 px-4 py-0.5" href="#team-section">Our
+            Team</a>
+        <a style="border-color: var(--text-primary); border-style: dashed;" class="slide-up border-0 px-4 py-0.5"
+            href="#contact">Contact Us</a>
     </div>
-  </header>
-</section>
+
+    <div class="snap-container">
+        <section id="welcome">
+            <header class="sec-first p-5 px-4"> <!--Adding the type writer effect here, in the H1 tag ↓ -->
+                <div class="container mx-auto text-center">
+                    <h1 class="text-4xl md:text-6x1 font-bold mb-4 fade-in">Anicon 3.0</h1>
+                    <p class="text-xl md:text-2xl opacity-90 slide-up">IISER-Kolkata's Ultimate Anime & Pop Culture
+                        Festival</p>
+                    <h2 class="text-2xl md:text-6xl font-bold mt-4 fade-in" id="autotype"></h2>
+                    <!-- its required that the element is left black -->
+                </div>
+            </header>
+        </section>
 
 
 
-  <!-- Full-screen Slideshow -->
-  <section class="slideshow-container">
-    <div class="slideshow-wrapper">
-      <div class="slideshow-item">
-        <img src="https://cdn.pixabay.com/photo/2023/10/06/23/29/ai-generated-8299238_1280.jpg" alt="Slide 1">
-      </div>
-      <div class="slideshow-item">
-        <img src="https://wallpapers.com/images/featured/pokemon-va6139eg5csznzmw.jpg" alt="Slide 2">
-      </div>
-      <div class="slideshow-item">
-        <img src="https://wallpapers.com/images/featured/marvel-comic-book-background-0exuprkk5cwj6ail.jpg" alt="Slide 3">
-      </div>
-      <div class="slideshow-item">
-        <img src="https://c4.wallpaperflare.com/wallpaper/279/834/461/game-of-thrones-tv-shows-hd-4k-wallpaper-preview.jpg" alt="Slide 4">
-      </div>
-      <div class="slideshow-item">
-        <img src="https://img.freepik.com/free-photo/anime-moon-landscape_23-2151645908.jpg" alt="Slide 5">
-      </div>
-    </div>
-    <div class="slideshow-nav"></div>
-    <!--<div class="scroll-indicator">
+        <!-- Full-screen Slideshow -->
+        <section class="slideshow-container">
+            <div class="slideshow-wrapper">
+                <div class="slideshow-item">
+                    <img src="https://cdn.pixabay.com/photo/2023/10/06/23/29/ai-generated-8299238_1280.jpg"
+                        alt="Slide 1">
+                </div>
+                <div class="slideshow-item">
+                    <img src="https://wallpapers.com/images/featured/pokemon-va6139eg5csznzmw.jpg" alt="Slide 2">
+                </div>
+                <div class="slideshow-item">
+                    <img src="https://wallpapers.com/images/featured/marvel-comic-book-background-0exuprkk5cwj6ail.jpg"
+                        alt="Slide 3">
+                </div>
+                <div class="slideshow-item">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/279/834/461/game-of-thrones-tv-shows-hd-4k-wallpaper-preview.jpg"
+                        alt="Slide 4">
+                </div>
+                <div class="slideshow-item">
+                    <img src="https://img.freepik.com/free-photo/anime-moon-landscape_23-2151645908.jpg" alt="Slide 5">
+                </div>
+            </div>
+            <div class="slideshow-nav"></div>
+            <!--<div class="scroll-indicator">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 5v14M19 12l-7 7-7-7" />
       </svg>
       <div style="font-size: 0.8rem; margin-top: 0.5rem">Scroll to explore</div>
     </div>-->
-  </section>
+        </section>
 
-  <!-- What is Anicon? -->
-  <!-- <section class="min-h-screen flex items-center justify-center max-w-3xl px-4">
+        <!-- What is Anicon? -->
+        <!-- <section class="min-h-screen flex items-center justify-center max-w-3xl px-4">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-8 text-center slide-up">What is Anicon?</h2>
       <div class="glass p-8 rounded-xl slide-up">
@@ -120,21 +140,23 @@
     </div>
   </section> -->
 
-  <section id="what" class="flex items-center justify-center min-h-screen px-4">
-    <div class="sec-first text-center max-w-3xl">
-      <h2 class="text-4xl font-bold mb-12 slide-up">What is Anicon?</h2>
-      <div class="glass p-8 rounded-xl slide-up">
-        <p class="text-lg leading-relaxed">
-          Anicon is IISER-Kolkata's premier anime and pop culture festival, bringing together fans of anime, manga,
-          comics, and more. It's a celebration of creativity, imagination, and the vibrant community that makes these
-          mediums so special.
-        </p>
-      </div>
-    </div>
-  </section>
+        <section id="what" class="flex items-center justify-center min-h-screen px-4">
+            <div class="sec-first text-center max-w-3xl">
+                <h2 class="text-4xl font-bold mb-12 slide-up">What is Anicon?</h2>
+                <div class="glass p-8 rounded-xl slide-up">
+                    <p class="text-lg leading-relaxed">
+                        Anicon is IISER-Kolkata's premier anime and pop culture festival, bringing together fans of
+                        anime, manga,
+                        comics, and more. It's a celebration of creativity, imagination, and the vibrant community that
+                        makes these
+                        mediums so special.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  <!-- Our Philosophy -->
-  <!-- <section class="min-h-screen max-w-3xl py-16 px-4">
+        <!-- Our Philosophy -->
+        <!-- <section class="min-h-screen max-w-3xl py-16 px-4">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-8 text-center slide-up">Our Philosophy</h2>
       <div class="glass p-8 rounded-xl slide-up">
@@ -146,22 +168,24 @@
       </div>
     </div>
   </section> -->
-  <section id="philosophy" class="flex items-center justify-center min-h-screen px-4">
-    <div class="sec-first text-center max-w-3xl">
-      <h2 class="text-4xl font-bold mb-12 slide-up">Our Philosophy</h2>
-      <div class="glass p-8 rounded-xl slide-up">
-        <p class="text-lg leading-relaxed">
-          We believe in creating a space where fans can come together, share their passion, and celebrate the art forms
-          they love. Our events are designed to foster creativity, build community, and provide unforgettable
-          experiences.
-        </p>
-      </div>
-    </div>
-  </section>
+        <section id="philosophy" class="flex items-center justify-center min-h-screen px-4">
+            <div class="sec-first text-center max-w-3xl">
+                <h2 class="text-4xl font-bold mb-12 slide-up">Our Philosophy</h2>
+                <div class="glass p-8 rounded-xl slide-up">
+                    <p class="text-lg leading-relaxed">
+                        We believe in creating a space where fans can come together, share their passion, and celebrate
+                        the art forms
+                        they love. Our events are designed to foster creativity, build community, and provide
+                        unforgettable
+                        experiences.
+                    </p>
+                </div>
+            </div>
+        </section>
 
 
-  <!-- Online Competitions -->
-  <!--<section class="min-h-screen py-16 px-4">
+        <!-- Online Competitions -->
+        <!--<section class="min-h-screen py-16 px-4">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-8 text-center slide-up">Online Competitions</h2>
       <div class="swiper">
@@ -208,80 +232,90 @@
     </div>
   </section>-->
 
-  <!-- Online Competitions -->
-    <section id="competitions" class="comp-card-section">
-        <div>
-            <h2 class="text-4xl font-bold mb-8 text-center slide-up">Online Competitions</h2>
-            <div class="swiper swiper-competitions">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <!-- Reel Competition --> <!-- changed the way the images for the competition are set up-->
-                    <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
-                      <!-- grayscales when not on hover -->
-                      <img src="assests/sandeepkumarkuanar.png" alt="Reel Competition" id="imgcompetition"
-                        class="w-120 h-120 mx-auto mb-4 rounded-xl">
-                      <h3 class="text-xl font-bold mb-4 text-center">Reel Competition</h3>
-                      <div class="flex flex-col justify-center items-center align-center space-y-2">  
-                        <div class="flex justify-center space-x-4">
-                          <button onclick="open_popup('reel_rule')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
-                          <button onclick="open_popup('reel_criteria')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Judgement Criteria</button>
+        <!-- Online Competitions -->
+        <section id="competitions" class="comp-card-section">
+            <div>
+                <h2 class="text-4xl font-bold mb-8 text-center slide-up">Online Competitions</h2>
+                <div class="swiper swiper-competitions">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <!-- Reel Competition --> <!-- changed the way the images for the competition are set up-->
+                        <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
+                            <!-- grayscales when not on hover -->
+                            <img src="assests/sandeepkumarkuanar.png" alt="Reel Competition" id="imgcompetition"
+                                class="w-120 h-120 mx-auto mb-4 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-center">Reel Competition</h3>
+                            <div class="flex flex-col justify-center items-center align-center space-y-2">
+                                <div class="flex justify-center space-x-4">
+                                    <button onclick="open_popup('reel_rule')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
+                                    <button onclick="open_popup('reel_criteria')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">Judgement Criteria</button>
+                                </div>
+                                <div class="flex flex-row justify-center">
+                                    <button onclick="open_popup('reel_how')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
+                                </div>
+                            </div>
+                            <div class="text-justify mt-1 text-center">Competition starts on <strong>25th december
+                                    2024</strong> and ends on <strong>25th January 2025</strong>.</div>
                         </div>
-                        <div class="flex flex-row justify-center">
-                          <button onclick="open_popup('reel_how')" class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
-                        </div>
-                      </div>
-                      <div class="text-justify mt-1 text-center">Competition starts on <strong>25th december 2024</strong> and ends on <strong>25th January 2025</strong>.</div>
-                    </div>
 
-                    <!-- AMV Competition -->
-                    <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
-                      <img src="assests/sandeepkumarkuanar.png" alt="AMV Competition" id="imgcompetition"
-                        class="w-120 h-120 mx-auto mb-4 rounded-xl">
-                      <h3 class="text-xl font-bold mb-4 text-center">AMV Competition</h3>
-                      <div class="flex flex-col justify-center items-center align-center space-y-2">  
-                        <div class="flex justify-center space-x-4">
-                          <button onclick="open_popup('amv_rule')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
-                          <button onclick="open_popup('amv_criteria')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Judgement Criteria</button>
+                        <!-- AMV Competition -->
+                        <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
+                            <img src="assests/sandeepkumarkuanar.png" alt="AMV Competition" id="imgcompetition"
+                                class="w-120 h-120 mx-auto mb-4 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-center">AMV Competition</h3>
+                            <div class="flex flex-col justify-center items-center align-center space-y-2">
+                                <div class="flex justify-center space-x-4">
+                                    <button onclick="open_popup('amv_rule')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
+                                    <button onclick="open_popup('amv_criteria')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">Judgement Criteria</button>
+                                </div>
+                                <div class="flex flex-row justify-center">
+                                    <button onclick="open_popup('amv_how')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex flex-row justify-center">
-                          <button onclick="open_popup('amv_how')" class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
-                      <img src="assests/sandeepkumarkuanar.png" alt="AMV Competition" id="imgcompetition"
-                        class="w-120 h-120 mx-auto mb-4 rounded-xl">
-                      <h3 class="text-xl font-bold mb-4 text-center">Cosplay Competition</h3>
-                      <div class="flex flex-col justify-center items-center align-center space-y-2">  
-                        <div class="flex justify-center space-x-4">
-                          <button onclick="open_popup('cc_rule')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
-                          <button onclick="open_popup('cc_criteria')" class="glass px-4 py-2 rounded-lg hover:opacity-90">Judgement Criteria</button>
+                        <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
+                            <img src="assests/sandeepkumarkuanar.png" alt="AMV Competition" id="imgcompetition"
+                                class="w-120 h-120 mx-auto mb-4 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4 text-center">Cosplay Competition</h3>
+                            <div class="flex flex-col justify-center items-center align-center space-y-2">
+                                <div class="flex justify-center space-x-4">
+                                    <button onclick="open_popup('cc_rule')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">Rules</button>
+                                    <button onclick="open_popup('cc_criteria')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">Judgement Criteria</button>
+                                </div>
+                                <div class="flex flex-row justify-center">
+                                    <button onclick="open_popup('cc_how')"
+                                        class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex flex-row justify-center">
-                          <button onclick="open_popup('cc_how')" class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
-                        </div>
-                      </div>
                     </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination swiper-pagination-competitions"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button swiper-button-prev swiper-button-prev-competitions"></div>
+                    <div class="swiper-button swiper-button-next swiper-button-next-competitions"></div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination swiper-pagination-competitions"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button swiper-button-prev swiper-button-prev-competitions"></div>
-                <div class="swiper-button swiper-button-next swiper-button-next-competitions"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="judges" class="judges-section">
-        <div>
-          <h2 class="text-4xl font-bold mb-8 text-center slide-up">Judges</h2>
-          <div class="swiper swiper-judges">
-              <!-- Additional required wrapper -->
-              <div id="judges-cards" class="swiper-wrapper judges-cards" style="">
-                  <!--<div class="swiper-slide judge-card glass">
+        <section id="judges" class="judges-section">
+            <div>
+                <h2 class="text-4xl font-bold mb-8 text-center slide-up">Judges</h2>
+                <div class="swiper swiper-judges">
+                    <!-- Additional required wrapper -->
+                    <div id="judges-cards" class="swiper-wrapper judges-cards" style="">
+                        <!--<div class="swiper-slide judge-card glass">
                     <div class="judge-card-content">
                       <div class="judge-img-div">
                         <img class="judge-img" src="assests/Thushiyantheswaran.png">
@@ -337,450 +371,496 @@
                       </div>
                     </div>
                   </div>-->
-              </div>
-              <!-- If we need pagination -->
-              <div class="swiper-pagination-judges swiper-pagination"></div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination-judges swiper-pagination"></div>
 
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button swiper-button-prev-judges swiper-button-prev"></div>
-              <div class="swiper-button swiper-button-next-judges swiper-button-next"></div>
-          </div>
-        </div>
-    </section>
-
-  <section id="price-details">
-      <div class="sec-first px-4">
-          <h1 class="text-3xl mb-8 text-center">Price Details</h1>
-          <table class="md:text-3xl border-separate border border-solid rounded" style="border-spacing: 10px;">
-              <tr>
-                  <th class="glass border border-solid rounded">Item</th>
-                  <th class="glass border border-solid rounded">Price for Common</th>
-                  <th class="glass border border-solid rounded">Price for IISER K students</th>
-              </tr>
-              <tr>
-                  <td class="glass border border-solid rounded">Base</td>
-                  <td class="glass border border-solid rounded text-center">24</td>
-                  <td class="glass border border-solid rounded text-center">0</td>
-              </tr>
-              <tr> 
-                  <td class="glass border border-solid rounded">Base + Poster</td>
-                  <td class="glass border border-solid rounded text-center">49</td>
-                  <td class="glass border border-solid rounded text-center">29</td>
-              </tr>
-              <tr>
-                  <td class="glass border border-solid rounded">Base + Poster + Manga Panel + Anime Bookmark</td>
-                  <td class="glass border border-solid rounded text-center">69</td>
-                  <td class="glass border border-solid rounded text-center">49</td>
-              </tr>
-          </table>
-      </div>
-  </section>
-  
-  <!-- Enhanced Registration Form -->
-  <section id="registration" class="reg py-16 px-4" style="height: 100vh; overflow: hidden;"><!--the styles above and below have to be removed to remove overlay-->
-    <div class="container mx-auto" style="filter: blur(20px);">
-      <h2 class="text-4xl font-bold mb-8 text-center">Register for Anicon 3.0</h2>
-      <div class="glass p-8 rounded-xl max-w-2xl mx-auto">
-        <form onchange="csoa()" method="POST" id="registrationForm" class="space-y-6" action="https://script.google.com/macros/s/AKfycbyGpgDr-daqgwNnxVPG7bYcTmRAc1RCJO_nKTaEU8Vp7iLGG0upBiHTmG0zhQsWsOxnEg/exec">
-          <!--replace the url with your apps script url for registraion form this same url has to be replaced in registraion_form.js file in scripts folder also.-->
-          <div class="form-group">
-            <label class="form-label" for="form-input-0">Full Name</label>
-            <input type="text" id="form-input-0" class="form-input" name="fullname" placeholder="Full Name"
-              minlength="2" required oninvalid="this.setCustomValidity('Enter valid name')"
-              oninput="this.setCustomValidity('')">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="form-input-1">Are you from IISER K?</label> <!-- added span tags here -->
-            <select oninput="is_iiserk(this.value)" id="form-input-1" name="is_iiser_k" class="form-input" required>
-              <option value="no"><span>No</span></option>
-              <option value="yes"><span>Yes</span></option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="form-input-2">Email Address</label>
-            <input type="email" onchange="check_iiserk_email(this)" id="form-input-2" class="form-input" name="email"
-              placeholder="Email" required oninvalid="this.setCustomValidity('Enter valid Email address')"
-              oninput="this.setCustomValidity('')">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="form-input-3">Phone Number</label>
-            <input type="tel" id="form-input-3" class="form-input" name="phone" placeholder="1234567890"
-              pattern="[0-9]{10}" required oninvalid="this.setCustomValidity('Enter valid phone number')"
-              oninput="this.setCustomValidity('')">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="form-input-4">College/Institution</label>
-            <input type="text" id="form-input-4" class="form-input" name="institute" placeholder="College/Institution"
-              minlength="2" required oninvalid="this.setCustomValidity('Enter valid college or institution name')"
-              oninput="this.setCustomValidity('')">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Preferred Events</label>
-            <div class="space-y-2">
-              <label class="flex items-center">
-                <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="cc"
-                  value="Cosplay Competition" required>
-                Cosplay Competition
-              </label>
-              <label class="flex items-center">
-                <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="amv"
-                  value="AMV Contest" required>
-                AMV Contest
-              </label>
-              <label class="flex items-center">
-                <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="reel"
-                  value="Reel Competition" required>
-                Reel Competition
-              </label>
-              <label class="flex items-center">
-                <input oninput="check_require()" onchange="check_audi(this)" type="checkbox" class="mr-2" name="audi"
-                  value="Audience" required>
-                Want to watch only
-              </label>
-              <!--If you add any other options here go to the registration_form.js in scripts folder and add the input element to some arrays which are also commented there. This is only for the checkbox inputs-->
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button swiper-button-prev-judges swiper-button-prev"></div>
+                    <div class="swiper-button swiper-button-next-judges swiper-button-next"></div>
+                </div>
             </div>
-            <input type="text" name="preferred" style="display: none">
-          </div>
-          <div class="form-group"> <!-- added span tags here -->
-            <label class="form-label" for="form-input-6">What you want?</label>
-            <select id="form-input-6" class="form-input" name="wanted_item" oninput="check_price(this)">
-              <option value="registration"><span>Nothing</span></option>
-              <option value="registration + poster"><span>Poster</span></option>
-              <option value="registration + poster + manga panel + anime bookmark"><span>Poster + Manga Panel + Anime Bookmark</span>
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label id="fee_label">You have to pay 24 rupees.</label>
-            <input style="display: none;" type="text" name="fee" value="24" required>
-            <img src="assests/anicon_logo2.svg" id="fee_img">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="form-input-7">Transaction Id</label>
-            <input type="text" id="form-input-7" class="form-input" name="transaction" placeholder="Transaction Id"
-              minlength="2" required oninvalid="this.setCustomValidity('Enter valid transaction Id')"
-              oninput="this.setCustomValidity('')">
-          </div>
-          <input value="Register Now!" type="submit"
-            class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
-        </form>
-      </div>
-    </div>
-    <div style="position: absolute; width: 100%; height: 100%; background: #3e3e3ed6; padding-top: 45vh; color: #ffff; text-align: center; font-size: 4vw;">Registration will open soon!</div><!--This div has to be deleted to remove over lay-->
-  </section>
+        </section>
 
-  <!-- <section class="py-16 max-w-3xl px-4">
+        <section id="price-details">
+            <div class="sec-first px-4">
+                <h1 class="text-3xl mb-8 text-center">Price Details</h1>
+                <table class="md:text-3xl border-separate border border-solid rounded" style="border-spacing: 10px;">
+                    <tr>
+                        <th class="glass border border-solid rounded">Item</th>
+                        <th class="glass border border-solid rounded">Price for Common</th>
+                        <th class="glass border border-solid rounded">Price for IISER K students</th>
+                    </tr>
+                    <tr>
+                        <td class="glass border border-solid rounded">Base</td>
+                        <td class="glass border border-solid rounded text-center">33</td>
+                        <td class="glass border border-solid rounded text-center">0</td>
+                    </tr>
+                    <tr>
+                        <td class="glass border border-solid rounded">Base + Poster</td>
+                        <td class="glass border border-solid rounded text-center">49</td>
+                        <td class="glass border border-solid rounded text-center">29</td>
+                    </tr>
+                    <tr>
+                        <td class="glass border border-solid rounded">Base + Poster + Manga Panel + Anime Bookmark</td>
+                        <td class="glass border border-solid rounded text-center">69</td>
+                        <td class="glass border border-solid rounded text-center">49</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Enhanced Registration Form -->
+        <section id="registration" class="reg py-16 px-4" style="height: 100vh; overflow: hidden;">
+            <!--the styles above and below have to be removed to remove overlay-->
+            <div class="container mx-auto" style="filter: blur(20px);">
+                <h2 class="text-4xl font-bold mb-8 text-center">Register for Anicon 3.0</h2>
+                <div class="glass p-8 rounded-xl max-w-2xl mx-auto">
+                    <form onchange="csoa()" method="POST" id="registrationForm" class="space-y-6"
+                        action="https://script.google.com/macros/s/AKfycbyGpgDr-daqgwNnxVPG7bYcTmRAc1RCJO_nKTaEU8Vp7iLGG0upBiHTmG0zhQsWsOxnEg/exec">
+                        <!--replace the url with your apps script url for registraion form this same url has to be replaced in registraion_form.js file in scripts folder also.-->
+                        <div class="form-group">
+                            <label class="form-label" for="form-input-0">Full Name</label>
+                            <input type="text" id="form-input-0" class="form-input" name="fullname"
+                                placeholder="Full Name" minlength="2" required
+                                oninvalid="this.setCustomValidity('Enter valid name')"
+                                oninput="this.setCustomValidity('')">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="form-input-1">Are you from IISER K?</label>
+                            <!-- added span tags here -->
+                            <select oninput="is_iiserk(this.value)" id="form-input-1" name="is_iiser_k"
+                                class="form-input" required>
+                                <option value="no"><span>No</span></option>
+                                <option value="yes"><span>Yes</span></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="form-input-2">Email Address</label>
+                            <input type="email" onchange="check_iiserk_email(this)" id="form-input-2" class="form-input"
+                                name="email" placeholder="Email" required
+                                oninvalid="this.setCustomValidity('Enter valid Email address')"
+                                oninput="this.setCustomValidity('')">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="form-input-3">Phone Number</label>
+                            <input type="tel" id="form-input-3" class="form-input" name="phone" placeholder="1234567890"
+                                pattern="[0-9]{10}" required
+                                oninvalid="this.setCustomValidity('Enter valid phone number')"
+                                oninput="this.setCustomValidity('')">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="form-input-4">College/Institution</label>
+                            <input type="text" id="form-input-4" class="form-input" name="institute"
+                                placeholder="College/Institution" minlength="2" required
+                                oninvalid="this.setCustomValidity('Enter valid college or institution name')"
+                                oninput="this.setCustomValidity('')">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Preferred Events</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input oninput="check_require()" onchange="check_audi(this)" type="checkbox"
+                                        class="mr-2" name="cc" value="Cosplay Competition" required>
+                                    Cosplay Competition
+                                </label>
+                                <label class="flex items-center">
+                                    <input oninput="check_require()" onchange="check_audi(this)" type="checkbox"
+                                        class="mr-2" name="amv" value="AMV Contest" required>
+                                    AMV Contest
+                                </label>
+                                <label class="flex items-center">
+                                    <input oninput="check_require()" onchange="check_audi(this)" type="checkbox"
+                                        class="mr-2" name="reel" value="Reel Competition" required>
+                                    Reel Competition
+                                </label>
+                                <label class="flex items-center">
+                                    <input oninput="check_require()" onchange="check_audi(this)" type="checkbox"
+                                        class="mr-2" name="audi" value="Audience" required>
+                                    Want to watch only
+                                </label>
+                                <!--If you add any other options here go to the registration_form.js in scripts folder and add the input element to some arrays which are also commented there. This is only for the checkbox inputs-->
+                            </div>
+                            <input type="text" name="preferred" style="display: none">
+                        </div>
+                        <div class="form-group"> <!-- added span tags here -->
+                            <label class="form-label" for="form-input-6">What you want?</label>
+                            <select id="form-input-6" class="form-input" name="wanted_item" oninput="check_price(this)">
+                                <option value="registration"><span>Nothing</span></option>
+                                <option value="registration + poster"><span>Poster</span></option>
+                                <option value="registration + poster + manga panel + anime bookmark"><span>Poster +
+                                        Manga Panel + Anime Bookmark</span>
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label id="fee_label">You have to pay 24 rupees.</label>
+                            <input style="display: none;" type="text" name="fee" value="24" required>
+                            <img src="assests/anicon_logo2.svg" id="fee_img">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="form-input-7">Transaction Id</label>
+                            <input type="text" id="form-input-7" class="form-input" name="transaction"
+                                placeholder="Transaction Id" minlength="2" required
+                                oninvalid="this.setCustomValidity('Enter valid transaction Id')"
+                                oninput="this.setCustomValidity('')">
+                        </div>
+                        <input value="Register Now!" type="submit"
+                            class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
+                    </form>
+                </div>
+            </div>
+            <div
+                style="position: absolute; width: 100%; height: 100%; background: #3e3e3ed6; padding-top: 45vh; color: #ededed; text-align: center; font-size: 4vw;">
+                <a class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity font-medium px-3"
+                    href="https://unstop.com/o/1kIEqrg?lb=Otz3Q9l&utm_medium=Share&utm_source=shortUrl" target="_blank">
+                    Register
+                    Now!!</a>
+            </div><!--This div has to be deleted to remove over lay-->
+        </section>
+
+        <!-- <section class="py-16 max-w-3xl px-4">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Event Schedule</h2>
       <div class="glass rounded-xl p-8 text-center">
         <h3 class="text-2xl font-bold mb-4">Coming Soon!</h3>
         <p>The complete schedule for February 7th, 2025 will be revealed shortly.</p> -->
 
-  <!-- <div class="schedule-content hidden">
+        <!-- <div class="schedule-content hidden">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         <div class="glass rounded-lg p-4">
                             <time>10:00 AM</time>
                             <h4>Opening Ceremony</h4>
                         </div> -->
 
-  <!-- </div>
+        <!-- </div>
     </div>
     </div>
     </div>
   </section> -->
 
 
-  <section id="schedule" class="flex items-center justify-center min-h-screen px-4">
-    <div class="sec-first text-center max-w-3xl">
-      <h2 class="text-3xl font-bold mb-12 text-center">Event Schedule</h2>
-      <div class="glass rounded-xl p-8 text-center">
-        <h3 class="text-2xl font-bold mb-4">Coming Soon!</h3>
-        <p class="text-lg leading-relaxed">
-          The complete schedule for February 8th, 2025 will be revealed shortly.
-        </p>
-      </div>
+        <section id="schedule" class="flex items-center justify-center min-h-screen px-4">
+            <div class="sec-first text-center max-w-3xl">
+                <h2 class="text-3xl font-bold mb-12 text-center">Event Schedule</h2>
+                <div class="glass rounded-xl p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Coming Soon!</h3>
+                    <p class="text-lg leading-relaxed">
+                        The complete schedule for February 8th, 2025 will be revealed shortly.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Team Section -->
+        <section id="team-section" class="py-16 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold mb-4 text-center">Our Team</h2>
+                <div class="team-container">
+                    <div class="team-carousel">
+                        <!-- Team Member 1 -->
+                        <div class="team-card flex flex-col justify-between h-360px">
+                            <img src="https://pbs.twimg.com/profile_images/1499007672829747207/Um7ddDLA_400x400.jpg"
+                                alt="Shuvam Banerji Seal" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h3 class="text-xl font-bold mb-2 text-center">Shuvam Banerji Seal</h3>
+                            <p class="text-sm font-medium text-center mb-4">Event Director</p>
+                            <p class="team-bio text-sm ">
+                                Leading the vision for Anicon 3.0 with 2+ years of experience in event management and a
+                                deep passion for
+                                anime culture. Specializes in creating immersive fan experiences.
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-card flex flex-col justify-between h-360px">
+                            <img src="assests/sandeepkumarkuanar.png" alt="Sandeep Kumar Kuanar"
+                                class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h3 class="text-xl font-bold mb-2 text-center">Sandeep Kumar Kuanar</h3>
+                            <p class="text-sm font-medium text-center mb-4">UI/UX Developer</p>
+                            <p class="team-bio text-sm ">
+                                1 year of experience in designing user interfaces and creating seamless user
+                                experiences.
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-card flex flex-col justify-between h-360px">
+                            <img src="assests/Thushiyantheswaran.png" alt="Thushiyantheswaran"
+                                class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h3 class="text-xl font-bold mb-2 text-center">Thushiyantheswaran</h3>
+                            <p class="text-sm font-medium text-center mb-4">Web Developer</p>
+                            <p class="team-bio text-sm ">
+                                1 year of experience in designing websites those scale well and are functional.
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="team-card flex flex-col justify-between h-360px">
+                            <img src="assests/debanjan.png" alt="Debanjan"
+                                class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h3 class="text-xl font-bold mb-2 text-center">Rupendra Krishna Ganapath</h3>
+                            <p class="text-sm font-medium text-center mb-4">Event organizer</p>
+                            <p class="team-bio text-sm ">
+                                Leading the vision for Anicon 3.0 with 2+ years of experience in event management and a
+                                deep passion for
+                                anime culture. Specializes in creating immersive fan experiences.
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="team-card flex flex-col justify-between h-360px">
+                            <img src="assests/debanjan.png" alt="Debanjan"
+                                class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h3 class="text-xl font-bold mb-2 text-center">Shreya</h3>
+                            <p class="text-sm font-medium text-center mb-4">Designer</p>
+                            <p class="team-bio text-sm ">
+                                Designer behind Anicon 3.0, crafting stunning visuals and assets that define the event's
+                                unique vibe and experience.
+                            </p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
+                                    </svg>
+                                </a>
+                                <a href="#" class=" hover:text-purple-200 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Add more team members here -->
+                    </div>
+                    <div class="carousel-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+                <div class="glass rounded-xl p-8 max-w-2xl mx-auto">
+                    <form class="space-y-6" name="contactForm" method="POST"
+                        action="https://script.google.com/macros/s/AKfycbzCZOOsb2sCdoAcSuxolpcDv2MT5XfoQtcsOkwqiVjlT2FYjLAM7yn6gt1q1_ljMlA/exec">
+                        <!--replace the url with your apps script url for contact form this same url has to be replaced in contact_form.js file in scripts folder also.-->
+                        <div>
+                            <label for="contact_name" class="block mb-2">Name</label>
+                            <input id="contact_name" name="contact_name" type="text" class="w-full p-3 rounded-lg glass"
+                                required>
+                        </div>
+                        <div>
+                            <label for="contact_email" class="block mb-2">Email</label>
+                            <input id="contact_email" name="contact_email" type="email"
+                                class="w-full p-3 rounded-lg glass" required>
+                        </div>
+                        <div>
+                            <label for="contact_message" class="block mb-2">Message</label>
+                            <textarea id="contact_message" name="contact_message" class="w-full p-3 rounded-lg glass"
+                                rows="4" required></textarea>
+                        </div>
+                        <input value="Send Message" type="submit"
+                            class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity">
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="logo-footer">
+            <div class="sec-first">
+                <div class="flex flex-row justify-evenly mb-4 space-x-4">
+                    <img src="assests/Anicon3.0.png" alt="our logo">
+                    <h1></h1>
+                    <img src="assests/iiserk.svg" alt="IISER-Kolkata logo">
+                </div>
+            </div>
+            <footer class="glass py-8 px-4 rounded-br-3xl rounded-tl-3xl rounded-tr-lg rounded-bl-lg">
+                <div
+                    class="container mx-auto text-center flex flex-col md:flex-row md:justify-center text-xs md:text-xl">
+                    <p class="mb-0 md:mb-0">&copy; ANICON 3.0 | INQUIVESTA | IISER-KOLKATA | 2024-2025</p>
+                </div>
+            </footer>
+        </section>
     </div>
-  </section>
+    <div class="overlay">
 
-  <!-- Enhanced Team Section -->
-  <section id="team-section" class="py-16 px-4">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-center">Our Team</h2>
-      <div class="team-container">
-        <div class="team-carousel">
-          <!-- Team Member 1 -->
-          <div class="team-card flex flex-col justify-between h-360px">
-            <img src="https://pbs.twimg.com/profile_images/1499007672829747207/Um7ddDLA_400x400.jpg"
-              alt="Shuvam Banerji Seal" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-            <h3 class="text-xl font-bold mb-2 text-center">Shuvam Banerji Seal</h3>
-            <p class="text-sm font-medium text-center mb-4">Event Director</p>
-            <p class="team-bio text-sm ">
-              Leading the vision for Anicon 3.0 with 2+ years of experience in event management and a deep passion for
-              anime culture. Specializes in creating immersive fan experiences.
-            </p>
-            <div class="flex justify-center space-x-4 mt-4">
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                </svg>
-              </a>
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
-                </svg>
-              </a>
+        <div class="popup" id="reel_rule">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="rule">
+                <h1 class="text-center text-xl mb-3">Reel Competition</h1>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>The theme is <strong>"Cosplay preparation for
+                            Anicon"</strong>.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>You must use <strong>"Meet me at
+                            Anicon3.0"</strong> and <strong>Anicon logo</strong>.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>You must mention <strong>#anicon3.0</strong>,
+                        <strong>#inquivesta11</strong> and <strong>#iiserk</strong> tags.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>You have to mention the procedure for the
+                        preparation of cosplay.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>You can pick your own background music.</span>
+                </p>
+                <p></p>
+                <p><strong>Note :</strong> Final costume is not necessary.</p>
             </div>
-          </div>
-          <div class="team-card flex flex-col justify-between h-360px">
-            <img src="assests/sandeepkumarkuanar.png" alt="Sandeep Kumar Kuanar"
-              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-            <h3 class="text-xl font-bold mb-2 text-center">Sandeep Kumar Kuanar</h3>
-            <p class="text-sm font-medium text-center mb-4">UI/UX Developer</p>
-            <p class="team-bio text-sm ">
-              1 year of experience in designing user interfaces and creating seamless user experiences.
-            </p>
-            <div class="flex justify-center space-x-4 mt-4">
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                </svg>
-              </a>
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="team-card flex flex-col justify-between h-360px">
-            <img src="assests/Thushiyantheswaran.png" alt="Thushiyantheswaran"
-              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-            <h3 class="text-xl font-bold mb-2 text-center">Thushiyantheswaran</h3>
-            <p class="text-sm font-medium text-center mb-4">Web Developer</p>
-            <p class="team-bio text-sm ">
-              1 year of experience in designing websites those scale well and are functional.
-            </p>
-            <div class="flex justify-center space-x-4 mt-4">
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                </svg>
-              </a>
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="team-card flex flex-col justify-between h-360px">
-            <img src="assests/debanjan.png" alt="Debanjan" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-            <h3 class="text-xl font-bold mb-2 text-center">Rupendra Krishna Ganapath</h3>
-            <p class="text-sm font-medium text-center mb-4">Event organizer</p>
-            <p class="team-bio text-sm ">
-              Leading the vision for Anicon 3.0 with 2+ years of experience in event management and a deep passion for
-              anime culture. Specializes in creating immersive fan experiences.
-            </p>
-            <div class="flex justify-center space-x-4 mt-4">
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                </svg>
-              </a>
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="team-card flex flex-col justify-between h-360px">
-            <img src="assests/debanjan.png" alt="Debanjan" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-            <h3 class="text-xl font-bold mb-2 text-center">Shreya</h3>
-            <p class="text-sm font-medium text-center mb-4">Designer</p>
-            <p class="team-bio text-sm ">
-              Designer behind Anicon 3.0, crafting stunning visuals and assets that define the event's unique vibe and experience.
-            </p>
-            <div class="flex justify-center space-x-4 mt-4">
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                </svg>
-              </a>
-              <a href="#" class=" hover:text-purple-200 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Add more team members here -->
         </div>
-        <div class="carousel-dots"></div>
-      </div>
-    </div>
-  </section>
 
-  <section id="contact" class="py-16 px-4">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
-      <div class="glass rounded-xl p-8 max-w-2xl mx-auto">
-        <form class="space-y-6" name="contactForm" method="POST" action="https://script.google.com/macros/s/AKfycbzCZOOsb2sCdoAcSuxolpcDv2MT5XfoQtcsOkwqiVjlT2FYjLAM7yn6gt1q1_ljMlA/exec">
-          <!--replace the url with your apps script url for contact form this same url has to be replaced in contact_form.js file in scripts folder also.-->
-          <div>
-            <label for="contact_name" class="block mb-2">Name</label>
-            <input id="contact_name" name="contact_name" type="text" class="w-full p-3 rounded-lg glass" required>
-          </div>
-          <div>
-            <label for="contact_email" class="block mb-2">Email</label>
-            <input id="contact_email" name="contact_email" type="email" class="w-full p-3 rounded-lg glass" required>
-          </div>
-          <div>
-            <label for="contact_message" class="block mb-2">Message</label>
-            <textarea id="contact_message" name="contact_message" class="w-full p-3 rounded-lg glass" rows="4"
-              required></textarea>
-          </div>
-          <input value="Send Message" type="submit"
-            class="w-full glass py-3 rounded-lg hover:opacity-90 transition-opacity">
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="logo-footer">
-    <div class="sec-first">
-      <div class="flex flex-row justify-evenly mb-4 space-x-4">
-        <img src="assests/Anicon3.0.png" alt="our logo">
-        <h1></h1>
-        <img src="assests/iiserk.svg" alt="IISER-Kolkata logo">
-      </div>
-    </div>
-      <footer class="glass py-8 px-4 rounded-br-3xl rounded-tl-3xl rounded-tr-lg rounded-bl-lg">
-        <div class="container mx-auto text-center flex flex-col md:flex-row md:justify-center text-xs md:text-xl">
-          <p class="mb-0 md:mb-0">&copy; ANICON 3.0 | INQUIVESTA | IISER-KOLKATA | 2024-2025</p>
+        <div class="popup" id="amv_rule">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="rule">
+                <h1 class="text-center text-xl mb-3">AMV Contest</h1>
+                <p><span class="bullet_point">&emsp;&bull; </span><span><strong>Anime BGM</strong> is
+                        <strong>not</strong> allowed.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>You must use the scenes <strong>only from the
+                            anime</strong>.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span><strong>Western animated videos</strong> are
+                        <strong>not</strong> allowed.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>You must use <strong>anicon logo</strong> at any
+                        corner or centre with <strong>opacity not less than 0.3</strong>.</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>You must mention <strong>#anicon3.0</strong>,
+                        <strong>#inquivesta11</strong> and <strong>#iiserk</strong> tags.</span></p>
+            </div>
         </div>
-      </footer>
-  </section>
-</div>
-  <div class="overlay">
 
-    <div class="popup" id="reel_rule">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="rule">
-        <h1 class="text-center text-xl mb-3">Reel Competition</h1>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>The theme is <strong>"Cosplay preparation for Anicon"</strong>.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>You must use <strong>"Meet me at Anicon3.0"</strong> and <strong>Anicon logo</strong>.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>You must mention <strong>#anicon3.0</strong>, <strong>#inquivesta11</strong> and <strong>#iiserk</strong> tags.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>You have to mention the procedure for the preparation of cosplay.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>You can pick your own background music.</span></p>
-        <p></p>
-        <p><strong>Note :</strong> Final costume is not necessary.</p>
-      </div>
-    </div>
+        <div class="popup" id="cc_rule">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="rule">
+                <h2>Cosplay Competition</h2>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
 
-    <div class="popup" id="amv_rule">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="rule">
-        <h1 class="text-center text-xl mb-3">AMV Contest</h1>
-        <p><span class="bullet_point">&emsp;&bull; </span><span><strong>Anime BGM</strong> is <strong>not</strong> allowed.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>You must use the scenes <strong>only from the anime</strong>.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span><strong>Western animated videos</strong> are <strong>not</strong> allowed.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>You must use <strong>anicon logo</strong> at any corner or centre with <strong>opacity not less than 0.3</strong>.</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>You must mention <strong>#anicon3.0</strong>, <strong>#inquivesta11</strong> and <strong>#iiserk</strong> tags.</span></p>
-      </div>
-    </div>
+        <div class="popup" id="reel_criteria">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="criteria">
+                <h1 class="text-center text-xl mb-3">Reel Competition</h1>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>How the <strong>reel content</strong> is?</span>
+                </p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>How well the <strong>process of costume
+                            making</strong> is documented?</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>How much the creator <strong>studied the
+                            character</strong>?</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>How <strong>far</strong> the designer went to
+                        create the costume?</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>How you <strong>personalize</strong> the
+                        character?</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>Why you <strong>want to be the
+                            character</strong>?</span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>If you had <strong>bought</strong> the costume,
+                        what the <strong>reason</strong> behind it.</span></p>
+                <p><strong>Note :</strong> Engagement and camera quality are not taken into account.</p>
+            </div>
+        </div>
 
-    <div class="popup" id="cc_rule">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="rule">
-        <h2>Cosplay Competition</h2>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-      </div>
-    </div>
+        <div class="popup" id="amv_criteria">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="criteria">
+                <h1 class="text-center text-xl mb-3">AMV Contest</h1>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>How the <strong>song is related</strong>?</span>
+                </p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span>How well the <strong>video is sequenced</strong>
+                        to the song?</span></p>
+            </div>
+        </div>
 
-    <div class="popup" id="reel_criteria">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="criteria">
-        <h1 class="text-center text-xl mb-3">Reel Competition</h1>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>How the <strong>reel content</strong> is?</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>How well the <strong>process of costume making</strong> is documented?</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>How much the creator <strong>studied the character</strong>?</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>How <strong>far</strong> the designer went to create the costume?</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>How you <strong>personalize</strong> the character?</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>Why you <strong>want to be the character</strong>?</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>If you had <strong>bought</strong> the costume, what the <strong>reason</strong> behind it.</span></p>
-        <p><strong>Note :</strong> Engagement and camera quality are not taken into account.</p>
-      </div>
-    </div>
-
-    <div class="popup" id="amv_criteria">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="criteria">
-        <h1 class="text-center text-xl mb-3">AMV Contest</h1>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>How the <strong>song is related</strong>?</span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span>How well the <strong>video is sequenced</strong> to the song?</span></p>
-      </div>
-    </div>
-
-    <div class="popup" id="cc_criteria">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="criteria">
-        <h1 class="text-center text-xl mb-3">Cosplay Competition</h1>
-        <p></p>
-        <p></p>
-      </div>
-    </div>
+        <div class="popup" id="cc_criteria">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="criteria">
+                <h1 class="text-center text-xl mb-3">Cosplay Competition</h1>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
 
 
-    <div class="popup" id="reel_how">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="criteria">
-        <h1 class="text-center text-xl mb-3">Reel Competition</h1>
-        <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
-      </div>
-    </div>
-    <div class="popup" id="amv_how">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="criteria">
-        <h1 class="text-center text-xl mb-3">AMV Contest</h1>
-        <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
-        <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
-      </div>
-    </div>
-    <div class="popup" id="cc_how">
-      <button onclick="close_popup(this.parentElement)">x</button>
-      <div class="criteria">
-        <h1 class="text-center text-xl mb-3">Cosplay Competition</h1>
-        <p><strong>To be Declared soon!</strong></p>
-        <p></p>
-      </div>
+        <div class="popup" id="reel_how">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="criteria">
+                <h1 class="text-center text-xl mb-3">Reel Competition</h1>
+                <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
+            </div>
+        </div>
+        <div class="popup" id="amv_how">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="criteria">
+                <h1 class="text-center text-xl mb-3">AMV Contest</h1>
+                <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
+                <p><span class="bullet_point">&emsp;&bull; </span><span><strong>To be declared soon!</strong></span></p>
+            </div>
+        </div>
+        <div class="popup" id="cc_how">
+            <button onclick="close_popup(this.parentElement)">x</button>
+            <div class="criteria">
+                <h1 class="text-center text-xl mb-3">Cosplay Competition</h1>
+                <p><strong>To be Declared soon!</strong></p>
+                <p></p>
+            </div>
+        </div>
+
     </div>
 
-  </div>
-    
 </body>
-<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"
+    type="text/javascript"></script>
 <script src="scripts/scripts.js"></script>
 <script src="scripts/registration_form.js" type="text/javascript"></script>
 <script src="scripts/contact_form.js" type="text/javascript"></script>
@@ -800,4 +880,5 @@
 <!--<script src="scripts/slider.js" type="text/javascript" defer></script>-->
 <script src="scripts/snap.js" type="text/javascript"></script>
 <script src="scripts/menu.js" type="text/javascript"></script>
+
 </html>
