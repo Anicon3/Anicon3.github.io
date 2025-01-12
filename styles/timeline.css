@@ -56,7 +56,7 @@ h2{
 
 .checkpoint:nth-child(odd) div::before, .checkpoint:nth-child(even) div::before{
   content: "";
-  background-color: green;
+  background-color: whitesmoke;
   width: 0.8em;
   height: 0.8em;
   border-radius: 50%;
