@@ -22,6 +22,7 @@
     <link href="styles/judges.css" rel="stylesheet">
     <link href="styles/snap.css" rel="stylesheet">
     <link href="styles/menu.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/timeline.css">
 </head>
 
 <body class="">
@@ -258,15 +259,13 @@
                                         class="glass px-4 py-2 rounded-lg hover:opacity-90">How to Participate</button>
                                 </div>
                             </div>
-                            <div class="text-justify mt-1 text-center">Competition starts on <strong>25th december
-                                    2024</strong> and ends on <strong>25th January 2025</strong>.</div>
                         </div>
 
                         <!-- AMV Competition -->
                         <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
                             <img src="assests/sandeepkumarkuanar.png" alt="AMV Competition" id="imgcompetition"
                                 class="w-120 h-120 mx-auto mb-4 rounded-xl">
-                            <h3 class="text-xl font-bold mb-4 text-center">AMV Competition</h3>
+                            <h3 class="text-xl font-bold mb-4 text-center">Bong AMV Competition</h3>
                             <div class="flex flex-col justify-center items-center align-center space-y-2">
                                 <div class="flex justify-center space-x-4">
                                     <button onclick="open_popup('amv_rule')"
@@ -284,7 +283,7 @@
                         <div class="swiper-slide competition-card glass rounded-xl p-6 slide-up">
                             <img src="assests/sandeepkumarkuanar.png" alt="AMV Competition" id="imgcompetition"
                                 class="w-120 h-120 mx-auto mb-4 rounded-xl">
-                            <h3 class="text-xl font-bold mb-4 text-center">Cosplay Competition</h3>
+                            <h3 class="text-xl font-bold mb-4 text-center">Chitra-Katha</h3>
                             <div class="flex flex-col justify-center items-center align-center space-y-2">
                                 <div class="flex justify-center space-x-4">
                                     <button onclick="open_popup('cc_rule')"
@@ -308,6 +307,8 @@
                 </div>
             </div>
         </section>
+
+      
 
         <section id="judges" class="judges-section">
             <div>
@@ -540,16 +541,44 @@
     </div>
   </section> -->
 
-
+<!-- schedule -->
         <section id="schedule" class="flex items-center justify-center min-h-screen px-4">
-            <div class="sec-first text-center max-w-3xl">
+            <div class="sec-end text-center max-w-3xl">
                 <h2 class="text-3xl font-bold mb-12 text-center">Event Schedule</h2>
-                <div class="glass rounded-xl p-8 text-center">
-                    <h3 class="text-2xl font-bold mb-4">Coming Soon!</h3>
-                    <p class="text-lg leading-relaxed">
-                        The complete schedule for February 8th, 2025 will be revealed shortly.
-                    </p>
-                </div>
+                <div class="timeline" >
+                  <div class="checkpoint" class="glass rounded-xl p-8 text-center">
+                    <div class="glass rounded-xl p-8 text-center" class="text-box">
+                      <h3 class="text-2xl font-bold mb-4">Reels Competition</h3>
+                      <p class="text-lg leading-relaxed">
+                          LIVE &#128308;
+                      </p>
+                      <p class="text-lg leading-relaxed">
+                        10TH JANUARY - 5TH FEBRUARY
+                      </p>
+                    </div>
+                  </div>
+                  <div class="checkpoint" class="glass rounded-xl p-8 text-center">
+                    <div class="glass rounded-xl p-8 text-center" class="text-box">
+                      <h3 class="text-2xl font-bold mb-4">Bong AMV Competition</h3>
+                      <p class="text-lg leading-relaxed">
+                          LIVE &#128308;
+                      </p>
+                      <p class="text-lg leading-relaxed">
+                        10TH JANUARY - 5TH FEBRUARY
+                      </p>
+                    </div>
+                  </div>
+                  <div class="checkpoint" class="glass rounded-xl p-8 text-center">
+                    <div class="glass rounded-xl p-8 text-center" class="text-box">
+                      <h3 class="text-2xl font-bold mb-4">Chitra-katha</h3>
+                      <p class="text-lg leading-relaxed">
+                          LIVE &#128308;
+                      </p>
+                      <p class="text-lg leading-relaxed">
+                        10TH JANUARY - 5TH FEBRUARY
+                      </p>
+                    </div>
+                  </div>
             </div>
         </section>
 
@@ -776,7 +805,7 @@
         <div class="popup" id="cc_rule">
             <button onclick="close_popup(this.parentElement)">x</button>
             <div class="rule">
-                <h2>Cosplay Competition</h2>
+                <h2>Chitra-Katha</h2>
                 <p></p>
                 <p></p>
                 <p></p>
@@ -824,7 +853,7 @@
         <div class="popup" id="cc_criteria">
             <button onclick="close_popup(this.parentElement)">x</button>
             <div class="criteria">
-                <h1 class="text-center text-xl mb-3">Cosplay Competition</h1>
+                <h1 class="text-center text-xl mb-3">Chitra-Katha</h1>
                 <p></p>
                 <p></p>
             </div>
@@ -850,7 +879,7 @@
         <div class="popup" id="cc_how">
             <button onclick="close_popup(this.parentElement)">x</button>
             <div class="criteria">
-                <h1 class="text-center text-xl mb-3">Cosplay Competition</h1>
+                <h1 class="text-center text-xl mb-3">Chitra-Katha</h1>
                 <p><strong>To be Declared soon!</strong></p>
                 <p></p>
             </div>
