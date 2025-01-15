@@ -85,10 +85,12 @@
 }
 
 .menu-screen a {
-	width: fit-content;
+	width: 100%;
 	text-align: center;
 	text-shadow: 4px 5px 10px var(--background-end);/*rgba(0, 0, 0, 0.5);*/
 	transition: 0.2s ease;
+	overflow-y: auto;
+	max-height: calc(100vw - 72.38px);
 }
 .menu-screen a:hover {
 	color: var(--text-secondary);/*#ffffff91;*/

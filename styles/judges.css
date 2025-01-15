@@ -4,6 +4,16 @@
   margin: 0px;
 }
 
+.judges-section-div {
+  width: 100%;
+}
+
+/*@media (pointer: fine) {
+  .swiper-judges .swiper-collabs {
+		width: calc(100vw - 16px);
+	}
+}*/
+
 .judge-card {
   display: block;
   height: fit-content;
@@ -26,6 +36,7 @@
 .judge-img-div {
   height: 200px;
   width: 200px;
+  margin: 0 auto;
 }
 
 .judge-img {

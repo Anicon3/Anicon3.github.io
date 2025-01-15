@@ -71,7 +71,7 @@ header {
     display: flex;
 }
 
-.comp-card-section, .judges-section {
+.comp-card-section, .judges-section .collabs-section {
 	display: block;
 	padding-top: 100px;
 	padding-bottom: 0;
@@ -83,7 +83,7 @@ header {
 	}
 }
 
-.comp-card-section h2, .judges-section h2 {
+.comp-card-section h2, .judges-section h2 .collabs-section h2 {
 	margin-bottom: 0;
 }
 
