@@ -56,6 +56,7 @@ async function addJudges () {
     const githubLinkElement = document.createElement('a');
     githubLinkElement.href = githubLink;
     githubLinkElement.innerHTML = git_svg;
+    githubLinkElement.style.display = "none";
     //const githubIcon = document.createElement('img');
     //githubIcon.src = "assests/github-brands-solid.svg";
     //githubIcon.alt = "GitHub";
