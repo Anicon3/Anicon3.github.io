@@ -36,10 +36,12 @@ async function addJudges () {
 
     const jobDiv = document.createElement('div');
     jobDiv.classList.add('judge-job');
-    jobDiv.textContent = job;
+    //jobDiv.textContent = job;
 
     detailsDiv.appendChild(nameDiv);
     detailsDiv.appendChild(jobDiv);
+
+    jobDiv.innerHTML = job;
 
     // Create and append the social media icons
     const mediaIconsDiv = document.createElement('div');
