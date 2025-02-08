@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TierList</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body * {
+			font-family: "oswald";
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			height: calc(100vh - 16px);
+			box-sizing: border-box;
+			justify-content: space-around;
+		}
+		.top {
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-direction: row;
+			padding: 5px 5px;
+			box-sizing: border-box;
+		}
+		.logo_1 {
+			width: 25%;
+			text-align: left;
+			padding: 0 0 0 50px;
+		}
+		.logo_1 img {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 120px;
+		}
+		.logo_2 {
+			width: 25%;
+			text-align: right;
+			padding: 0 50px 0 0;
+		}
+		.logo_2 img {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 120px;
+		}
+		.title {
+			width: 50%;
+			text-align: center;
+		}
+		.title h1 {
+			margin: 0;
+			font-size: 60px;
+		}
+		.title h5 {
+			font-size: 25px;
+			margin: 0;
+		}
+		.middle {
+			display: flex;
+			flex-direction: row;
+			padding: 5px 5px;
+			width: 100%;
+			height: auto;
+			justify-content: flex-start;
+			box-sizing: border-box;
+		}
+		.canvas_div {
+			display: block;
+			width: 75%;
+		}
+		.poster_div {
+			display: none;
+			width: 25%;
+			text-align: center;
+		}
+		.bottom {
+			width: 100%;
+			height: auto;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: row;
+			padding: 5px 5px;
+		}
+		.table {
+			width: 60%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 0px 15px 0 5px;
+		}
+		.table_top {
+			font-size: 30px;
+		}
+		.table_1 {
+			text-align: left;
+		}
+		.table_2 {
+			text-align: center;
+		}
+		.table_3 {
+			text-align: right;
+		}
+		.view_count_div {
+			text-align: center;
+			width: 15%;
+		}
+		.view_count {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 25px;
+		}
+		.qr_code {
+			width: 25%;
+			text-align: center;
+		}
+		.qr_code img {
+			height: 130px;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			padding: 0;
+		}
+	</style>
+</head>
+<body><div class="container">
+	<div class="top">
+		<div class="logo_1">
+			<img src="anicon_logo.png" alt="Anicon">
+		</div>
+		<div class="title">
+			<h1>Anicon 3.0</h1>
+			<h5>Make your favorite anime fly higher</h5>
+		</div>
+		<div class="logo_2">
+			<img src="inquivesta_logo.png" alt="Inquivesta">
+		</div>
+	</div>
+	<div class="middle">
+		<div class="canvas_div">
+			<canvas id="myChart"></canvas>
+		</div>
+		<div class="poster_div">
+			<img class="poster" src="">
+		</div>
+	</div>
+	<div class="bottom">
+		<div class="table">
+			<div class="table_1 table_top">1.</div>
+			<div class="table_2 table_top">2.</div>
+			<div class="table_3 table_top">3.</div>
+		</div>
+		<div class="view_count_div">
+			<div class="view_count">view count</div>
+		</div>
+		<div class="qr_code">
+			<img src="form_qr_code.svg" alt="form qr code">
+		</div>
+	</div>
+	<div style="display: none;">
+		<form name="start_row_form">
+			<input type="number" name="start_row" value="0">
+			<button type="submit" name="submit_btn"></button>
+		</form>
+	</div>
+</div></body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript">
+	document.forms['start_row_form'].addEventListener('submit', function (e) {
+		e.preventDefault();
+	});
+
+	const ctx = document.getElementById('myChart');
+	
+	var label_anime_names = ['Anime 1', 'Anime 2', 'Anime 3', 'Anime 4', 'Anime 5', 'Anime 6', 'Anime 7', 'Anime 8', 'Anime 9', 'Anime 10', 'Anime 11', 'Anime 12', 'Anime 13', 'Anime 14', 'Anime 15', 'Anime 16', 'Anime 17', 'Anime 18', 'Anime 19', 'Anime 20'];
+	let anime_poster_links = ['testpic.jpg'];
+	let points_data = [];
+	for (let i = 0; i < label_anime_names.length; i++) {
+		points_data.push(10);
+	}
+	let bar_bgcolor = ['rgb(243, 195, 0)', 'rgb(135, 86, 146)', 'rgb(243, 132, 0)', 'rgb(161, 202, 241)', 'rgb(190, 0, 50)', 'rgb(194, 178, 128)', 'rgb(132, 132, 130)', 'rgb(0, 136, 86)', 'rgb(230, 143, 172)', 'rgb(0, 103, 165)', 'rgb(249, 147, 121)', 'rgb(96, 78, 151)', 'rgb(246, 166, 0)', 'rgb(179, 68, 108)', 'rgb(220, 211, 0)', 'rgb(136, 45, 23)', 'rgb(141, 182, 0)', 'rgb(101, 69, 34)', 'rgb(226, 88, 34)', 'rgb(43, 61, 38)'];
+
+	const data = {
+		labels: label_anime_names,
+		datasets: [{
+			label: 'My First Dataset',
+			data: points_data,
+			backgroundColor: bar_bgcolor,
+			hoverOffset: 4,
+			//barThickness: 20,
+			barPercentage: 1,
+			categoryPercentage: 0.5,
+		}]
+	};
+	const plugin = {
+		beforeInit(chart) {
+			// Get a reference to the original fit function
+			const origFit = chart.legend.fit;
+			chart.legend.fit = function fit() {
+				origFit.bind(chart.legend)();
+				// Change the height to any desired value
+				this.height -= 50;
+			}
+		}
+	}
+	const config = {
+		type: 'bar',
+		data: data,
+		options: {
+			indexAxis: 'y',
+			scales: {
+				x: {
+					display: true,
+					ticks: {
+						display: false
+					},
+					border: {
+						display: false
+					}
+				},
+				y: {
+					ticks: {
+						color: "black"
+					}
+				}
+			}
+		},
+		plugins: [plugin]
+	};
+
+	const myChart = new Chart (ctx, config);
+
+	const appscriptURL = "https://script.google.com/macros/s/AKfycbxVwRqVJ5bpVDT03rCKfSMQfg63LE3-SuHqvvINQ48IIYje1tpS5x91mvIyisbvcL-v/exec";
+	row_count = 0;
+
+	async function fetch_function () {
+		//document.forms['start_row_form']['start_row'].setAttribute("value", row_count + 2);
+
+		let send_data = new FormData(document.forms['start_row_form']);
+
+		return fetch(appscriptURL, { method: 'POST', mode:'cors', body: send_data})
+			.then(x => x.text())
+			.then(y => {
+				console.log(JSON.parse(y).error);
+				return JSON.parse(y).result;
+			})
+			.catch(error => console.log("Error: " + error.message))
+	}
+
+	async function update_chart () {
+		let data = await fetch_function();
+		console.log(data, row_count);
+
+		for (let i = 0; i < data.length; i++) {
+			let temp = JSON.parse(data[i][0]);
+			if (row_count <= i) {
+				row_count++;
+				document.getElementsByClassName('view_count')[0]. innerHTML = row_count;
+				for (let j = 0; j < temp.length; j++) {
+					points_data[j] += Number(temp[j]);
+				}
+			}
+		}
+
+		console.log(points_data, row_count, document.forms['start_row_form']['start_row'].value, new FormData(document.forms['start_row_form']));
+
+		//row_count += data.length;
+
+		document.forms['start_row_form']['start_row'].value = row_count + 2;
+		//document.forms['start_row_form']['submit_btn'].click();
+
+		let sorted_points_data = [...points_data];
+		sorted_points_data.sort((x, y) => y - x);
+		let table_top = document.getElementsByClassName('table_top');
+		for (let i = 0; i < table_top.length; i++) {
+			console.log(points_data.indexOf(sorted_points_data[i]), sorted_points_data, points_data);
+			table_top[i].innerHTML = String(i + 1) + ". " + label_anime_names[points_data.indexOf(sorted_points_data[i])];
+			table_top[i].style.color = bar_bgcolor[points_data.indexOf(sorted_points_data[i])];
+		}
+		let poster = document.getElementsByClassName('poster');
+		for (let i = 0; i < 1; i++) {
+			//poster[i].src = anime_poster_links[points_data.indexOf(sorted_points_data[i])];	
+		}
+
+		for (let i = 0; i < points_data.length; i++) {
+			myChart.data.datasets[0].data[i] = points_data[i];
+		}
+		myChart.update();
+	}
+
+	window.onload = function () {
+		let asdf = setInterval(update_chart, 100);
+		//let cond = true;
+		//while (cond == true) {
+		//	update_chart();
+		//}
+	};
+</script>
+</html>

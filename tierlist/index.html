@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Anicon 3.0 | TierList</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<img class="anicon_logo" src="anicon_logo.png" alt="Anicon">
+	<img class="inquivesta_logo" src="inquivesta_logo.png" alt="Inquivesta">
+	<div class="title_div">
+		<h1>TierList</h1>
+		<h5>Make your favourite anime fly higher.</h5>
+	</div>
+	<div class="message_div"></div>
+	<div class="form_container"><div class="container">
+		<form name="tierlist" class="form" method="POST" action="https://script.google.com/macros/s/AKfycbwVka5yy8i1Y8L5xv1YYCue3XeTCRxZCdP_V04ca4x2Zz2UtIN_XHcC4jLxgX9r-rdOKw/exec">
+			<div class="form_input"></div>
+			<!--<div class="rank_1_div">
+				<label for="anime_1">Anime 1</label>
+				<select id="anime_1" class="ranks" onchange="check_option_list(this)" required>
+					<option value="">Select</option>
+					<option value="1">Rank 1</option>
+					<option value="2">Rank 2</option>
+					<option value="3">Rank 3</option>
+					<option value="4">Rank 4</option>
+					<option value="5">Rank 5</option>
+					.
+					.
+					.
+					up to no. of categories
+				</select>
+			</div>
+			.
+			.
+			.
+			up to no. of animes
+			<div>
+				<button type="submit">Submit</button>
+			</div>-->
+			<div class="form_submit">
+				<div style="display: none">
+					<input type="text" name="unique_id" value=" ">
+					<input type="text" name="rank_data" value=" ">
+				</div>
+				<!--<button type="submit">Submit</button>-->
+			</div>
+		</form>
+	</div></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@thumbmarkjs/thumbmarkjs/dist/thumbmark.umd.js"></script>
+<script type="text/javascript">
+	const form = document.forms['tierlist'];
+	
+	let anime_list = ['Castlevania: Nocturne', 'Uma Musume', 'Dandadan', 'Orb', 'Pantheon', 'Ishura', 'Pluto', 'Failure Frame', 'Frieren', 'Uzumaki', 'Onimusha', 'Solo Leveling', 'My Happy Marriage', 'Blue Lock', 'Enen no Shouboutai', 'Honey Lemon Soda', 'Blue Box', 'Sakamoto Days', 'Medalist', 'Tsumasho'];
+	//let dropdown_list = ['Select', 'Rank 1', 'Rank 2', 'Rank 3', 'Rank 4', 'Rank 5', 'Rank 6', 'Rank 7', 'Rank 8', 'Rank 9', 'Rank 10', 'Rank 11', 'Rank 12', 'Rank 13', 'Rank 14', 'Rank 15', 'Rank 16', 'Rank 17', 'Rank 18', 'Rank 19', 'Rank 20'];
+	let dropdown_list = ['Select', 'Goated', 'Great', 'Cool', 'Decent', 'Meh', 'Trash'];
+	//let dropdown_value = ['', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+	let dropdown_value = ['', 6, 5, 4, 3, 2, 1];
+	
+	div_1 = document.createElement('div');
+	div_1.classList.add('div_1');
+	document.getElementsByClassName('form_input')[0].appendChild(div_1);
+	div_2 = document.createElement('div');
+	div_2.classList.add('div_2');
+	document.getElementsByClassName('form_input')[0].appendChild(div_2);
+	for (let i = 0; i < anime_list.length; i++) {
+		let grid_div = div_1;
+		if (i > Math.ceil(anime_list.length / 2) - 1) {
+			grid_div = div_2
+		}
+		let div_element = document.createElement('div');
+		div_element.classList.add('rank_' + String(i + 1) + '_div');
+		grid_div.appendChild(div_element);
+		let label_element = document.createElement('label');
+		label_element.textContent = anime_list[i];
+		label_element.classList.add('labels');
+		label_element.setAttribute('for', 'anime_' + String(i + 1));
+		div_element.appendChild(label_element);
+		let select_element = document.createElement('select');
+		select_element.required = true;
+		select_element.setAttribute('name', 'anime_' + String(i + 1));
+		select_element.classList.add('ranks');
+		select_element.id = 'anime_' + String(i + 1);
+		select_element.setAttribute('onchange', "check_option_list(this)");
+		div_element.appendChild(select_element);
+		for (let j = 0; j < dropdown_list.length; j++) {
+			let option_element = document.createElement('option');
+			option_element.innerHTML = dropdown_list[j];
+			option_element.setAttribute('value', dropdown_value[j]);
+			select_element.appendChild(option_element);
+		}
+	}
+	let button_element = document.createElement('button');
+	button_element.setAttribute('type', 'submit');
+	button_element.classList.add('submit_button');
+	button_element.textContent = "Submit";
+	document.getElementsByClassName('form_submit')[0].appendChild(button_element);
+
+	let anime_elements = document.getElementsByClassName('ranks');
+
+	function check_option_list (select_element) {
+		/*for(let i = 0; i < anime_elements.length; i++) {
+			if (select_element != anime_elements[i] && select_element.value == anime_elements[i].value && select_element.value != "") {
+				anime_elements[i].getElementsByTagName('option')[0].selected = true;
+			}
+		}
+		let value_index = [];
+		for (let k = 0; k < anime_elements.length; k++) {
+			let temp_index = 0;
+			if (anime_elements[k].value != "") {
+				temp_index = dropdown_value.indexOf(Number(anime_elements[k].value));
+			}
+			value_index.push(temp_index);
+		}
+		for (let i = 0; i < anime_elements.length; i++) {
+			if (select_element != anime_elements[i]) {
+				for (let j = 0; j < dropdown_list.length; j++) {
+					anime_elements[i].getElementsByTagName('option')[j].style.display = "block";
+				}
+				for (let k = 0; k < value_index.length; k++) {
+					if (value_index[k] != 0) {
+						anime_elements[i].getElementsByTagName('option')[value_index[k]].style.display = "none";
+					}
+				}
+			}
+		}
+		if (select_element.value == "") {
+			for (let i = 0; i < dropdown_list.length; i++) {
+				select_element.getElementsByTagName('option')[i].style.display = "block";
+			}
+		}*/
+	}
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault();
+		let rank_data = [];
+		for (let i = 0; i < anime_elements.length; i++) {
+			rank_data.push(anime_elements[i].value);
+		}
+		form['rank_data'].value = JSON.stringify(rank_data);
+		async_funtion();		
+		//if (form['rank_data'].value != "[]" && form['unique_id'].value != "") {
+			//submit_form();
+			//console.log(new FormData(form));
+		//}
+	});
+
+	let async_funtion = async function () {
+		let result = await get_fingerprint();
+	}
+
+	function get_fingerprint () {
+		let result = "";
+		ThumbmarkJS.getFingerprint().then(
+			function(fp) {
+				//console.log(fp);
+				form['unique_id'].value = fp;
+				submit_form();
+			}
+		);
+	}
+
+
+	const appscriptURL = 'https://script.google.com/macros/s/AKfycbwVka5yy8i1Y8L5xv1YYCue3XeTCRxZCdP_V04ca4x2Zz2UtIN_XHcC4jLxgX9r-rdOKw/exec';
+	//replace the url with your appscript url for the registration/////////////////////////////////////////////////////////
+
+
+	function submit_form () {
+	  //this section is for adding the checkbox input into single string and put that string in a text input element which is hidden.
+
+	  //////////////////////////////////////////////////////////////////////////////////////////
+
+	  //alert("Your details are processing. Please wait");
+		document.getElementsByClassName('message_div')[0].innerHTML = "Preparing your favourite animes to fly high"
+	  //console.log(form['rank_data'].value, form['unique_id'].value);
+
+	  fetch(appscriptURL, { method: 'POST', mode:'cors', body: new FormData(form)})
+	  .then(x => x.text())
+	  .then(y => check_fetch_result(y, "Your response is submitted."))
+	  .catch(error => document.getElementsByClassName('message_div')[0].innerHTML = "Error: " + error.message)
+	  //.catch(error => console.error('Error!', error.message))
+	  
+	}
+
+	//this function is to check the json output get from the apps script.  May be the name is miss matching.
+	function check_fetch_result (data, success_message) {
+		data = JSON.parse(data);
+		if (data.result === "success") {
+			//alert(success_message);
+			document.getElementsByClassName('message_div')[0].innerHTML = "Your favourite animes reached a new height."
+		} else {
+		  	//alert("Error : " + JSON.stringify(data.error));
+		  	if (JSON.stringify(data.error) == JSON.stringify("duplicate")) {
+		  		document.getElementsByClassName('message_div')[0].innerHTML = "You already made your favourite animes fly."
+		  	}
+		}
+	}
+</script>
+</html>
