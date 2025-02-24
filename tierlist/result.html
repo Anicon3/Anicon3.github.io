@@ -60,31 +60,33 @@
 			font-size: 25px;
 			margin: 0;
 		}
-		.middle {
+		.non_top {
 			display: flex;
 			flex-direction: row;
-			padding: 5px 5px;
 			width: 100%;
-			height: auto;
-			justify-content: flex-start;
+			height: -webkit-fill-available;
+			justify-content: space-evenly;
+		}
+		.middle {
+			display: flex;
+			flex-direction: column;
+			padding: 5px 5px;
+			width: 65%;
+			height: 100%;
+			justify-content: space-evenly;
 			box-sizing: border-box;
 		}
 		.canvas_div {
 			display: block;
-			width: 75%;
-		}
-		.poster_div {
-			display: none;
-			width: 25%;
-			text-align: center;
-		}
-		.bottom {
 			width: 100%;
-			height: auto;
-			box-sizing: border-box;
+		}
+		.non_graph {
 			display: flex;
 			flex-direction: row;
-			padding: 5px 5px;
+			width: 100%;
+			padding: 5px;
+			box-sizing: border-box;
+			justify-content: space-evenly;
 		}
 		.table {
 			width: 60%;
@@ -115,12 +117,28 @@
 			transform: translateY(-50%);
 			font-size: 25px;
 		}
+		.bottom {
+			width: 35%;
+			height: auto;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			padding: 5px 5px;
+			justify-content: space-evenly;
+		}
+		.poster_div {
+			height: auto;
+			text-align: center;
+		}
+		.poster {
+			max-height: 400px;
+		}
 		.qr_code {
-			width: 25%;
+			width: 100%;
 			text-align: center;
 		}
 		.qr_code img {
-			height: 130px;
+			height: 250px;
 			position: relative;
 			top: 50%;
 			transform: translateY(-50%);
@@ -141,25 +159,29 @@
 			<img src="inquivesta_logo.png" alt="Inquivesta">
 		</div>
 	</div>
-	<div class="middle">
-		<div class="canvas_div">
-			<canvas id="myChart"></canvas>
+	<div class="non_top">
+		<div class="middle">
+			<div class="canvas_div">
+				<canvas id="myChart" height="500px" width="800px"></canvas>
+			</div>
+			<div class="non_graph">
+				<div class="table">
+					<div class="table_1 table_top">1.</div>
+					<div class="table_2 table_top">2.</div>
+					<div class="table_3 table_top">3.</div>
+				</div>
+				<div class="view_count_div">
+					<div class="view_count">view count</div>
+				</div>
+			</div>
 		</div>
-		<div class="poster_div">
-			<img class="poster" src="">
-		</div>
-	</div>
-	<div class="bottom">
-		<div class="table">
-			<div class="table_1 table_top">1.</div>
-			<div class="table_2 table_top">2.</div>
-			<div class="table_3 table_top">3.</div>
-		</div>
-		<div class="view_count_div">
-			<div class="view_count">view count</div>
-		</div>
-		<div class="qr_code">
-			<img src="form_qr_code.svg" alt="form qr code">
+		<div class="bottom">
+			<div class="poster_div">
+				<img class="poster" src="1.jpg">
+			</div>
+			<div class="qr_code">
+				<img src="form_qr_code.svg" alt="form qr code">
+			</div>
 		</div>
 	</div>
 	<div style="display: none;">
@@ -177,12 +199,13 @@
 
 	const ctx = document.getElementById('myChart');
 	
-	var label_anime_names = ['Anime 1', 'Anime 2', 'Anime 3', 'Anime 4', 'Anime 5', 'Anime 6', 'Anime 7', 'Anime 8', 'Anime 9', 'Anime 10', 'Anime 11', 'Anime 12', 'Anime 13', 'Anime 14', 'Anime 15', 'Anime 16', 'Anime 17', 'Anime 18', 'Anime 19', 'Anime 20'];
-	let anime_poster_links = ['testpic.jpg'];
+	var label_anime_names = ['Castlevania: Nocturne', 'Uma Musume', 'Dandadan', 'Orb', 'Pantheon', 'Ishura', 'Pluto', 'Failure Frame', 'Frieren', 'Uzumaki', 'Onimusha', 'Solo Leveling', 'My Happy Marriage', 'Blue Lock', 'Enen no Shouboutai', 'Honey Lemon Soda', 'Blue Box', 'Sakamoto Days', 'Medalist', 'Tsumasho'];
 	let points_data = [];
 	for (let i = 0; i < label_anime_names.length; i++) {
 		points_data.push(10);
 	}
+	let anime_poster_links = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+	
 	let bar_bgcolor = ['rgb(243, 195, 0)', 'rgb(135, 86, 146)', 'rgb(243, 132, 0)', 'rgb(161, 202, 241)', 'rgb(190, 0, 50)', 'rgb(194, 178, 128)', 'rgb(132, 132, 130)', 'rgb(0, 136, 86)', 'rgb(230, 143, 172)', 'rgb(0, 103, 165)', 'rgb(249, 147, 121)', 'rgb(96, 78, 151)', 'rgb(246, 166, 0)', 'rgb(179, 68, 108)', 'rgb(220, 211, 0)', 'rgb(136, 45, 23)', 'rgb(141, 182, 0)', 'rgb(101, 69, 34)', 'rgb(226, 88, 34)', 'rgb(43, 61, 38)'];
 
 	const data = {
@@ -212,6 +235,7 @@
 		type: 'bar',
 		data: data,
 		options: {
+			maintainAspectRatio: false,
 			indexAxis: 'y',
 			scales: {
 				x: {
@@ -225,7 +249,8 @@
 				},
 				y: {
 					ticks: {
-						color: "black"
+						color: "black",
+						weight: "bold"
 					}
 				}
 			}
@@ -252,6 +277,8 @@
 			.catch(error => console.log("Error: " + error.message))
 	}
 
+	let last_poster = "";
+
 	async function update_chart () {
 		let data = await fetch_function();
 		console.log(data, row_count);
@@ -267,24 +294,43 @@
 			}
 		}
 
-		console.log(points_data, row_count, document.forms['start_row_form']['start_row'].value, new FormData(document.forms['start_row_form']));
+		//console.log(points_data, row_count, document.forms['start_row_form']['start_row'].value, new FormData(document.forms['start_row_form']));
 
 		//row_count += data.length;
 
-		document.forms['start_row_form']['start_row'].value = row_count + 2;
+		//document.forms['start_row_form']['start_row'].value = row_count + 2;
 		//document.forms['start_row_form']['submit_btn'].click();
 
 		let sorted_points_data = [...points_data];
 		sorted_points_data.sort((x, y) => y - x);
 		let table_top = document.getElementsByClassName('table_top');
 		for (let i = 0; i < table_top.length; i++) {
-			console.log(points_data.indexOf(sorted_points_data[i]), sorted_points_data, points_data);
-			table_top[i].innerHTML = String(i + 1) + ". " + label_anime_names[points_data.indexOf(sorted_points_data[i])];
-			table_top[i].style.color = bar_bgcolor[points_data.indexOf(sorted_points_data[i])];
+			let temp = [...points_data];
+			//console.log(points_data.indexOf(sorted_points_data[i]), sorted_points_data, points_data);
+			if (i > 0) {
+				if (table_top[i -  1].innerHTML == String(i) + ". " + label_anime_names[temp.indexOf(sorted_points_data[i])]) {
+					delete temp[temp.indexOf(sorted_points_data[i])];
+					console.log(temp, sorted_points_data[i]);
+					table_top[i].innerHTML = String(i) + ". " + label_anime_names[temp.indexOf(sorted_points_data[i])];
+					table_top[i].style.color = bar_bgcolor[temp.indexOf(sorted_points_data[i])];
+				} else if (table_top[0].innerHTML == String(1) + ". " + label_anime_names[temp.indexOf(sorted_points_data[i])]) {
+					delete temp[temp.indexOf(sorted_points_data[i])];
+					delete temp[temp.indexOf(sorted_points_data[i])];
+					console.log(temp, sorted_points_data[i]);
+					table_top[i].innerHTML = String(i - 1) + ". " + label_anime_names[temp.indexOf(sorted_points_data[i])];
+					table_top[i].style.color = bar_bgcolor[temp.indexOf(sorted_points_data[i])];
+				} else {
+					table_top[i].innerHTML = String(i + 1) + ". " + label_anime_names[temp.indexOf(sorted_points_data[i])];
+					table_top[i].style.color = bar_bgcolor[temp.indexOf(sorted_points_data[i])];
+				}
+			} else {
+				table_top[i].innerHTML = String(i + 1) + ". " + label_anime_names[temp.indexOf(sorted_points_data[i])];
+				table_top[i].style.color = bar_bgcolor[temp.indexOf(sorted_points_data[i])];
+			}
 		}
 		let poster = document.getElementsByClassName('poster');
 		for (let i = 0; i < 1; i++) {
-			//poster[i].src = anime_poster_links[points_data.indexOf(sorted_points_data[i])];	
+			poster[i].src = anime_poster_links[points_data.indexOf(sorted_points_data[i])];	
 		}
 
 		for (let i = 0; i < points_data.length; i++) {
